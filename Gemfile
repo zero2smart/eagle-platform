@@ -84,6 +84,8 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'mock_redis'
 
+  gem 'bootstrap', '~> 4.2.1'
+
   # Nice formatting for Rspec tests
   gem 'fuubar'
 
