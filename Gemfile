@@ -52,7 +52,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'grape'
 gem 'grape-entity'
+gem 'grape_logging'
 gem 'grape-swagger'
+gem 'grape-swagger-rails'
 # gem 'grape-swagger' ,
 #   git: 'git://github.com/ruby-grape/grape-swagger.git',
 #   branch: 'master'
