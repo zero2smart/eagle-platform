@@ -6,7 +6,6 @@
     <%= csp_meta_tag %>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= stylesheet_link_tag 'https://fonts.googlekapis.com/css?family=Open+Sans:300,400,600,700' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -16,8 +15,8 @@
     <div class="scrollbar-inner">
       <!-- Brand -->
       <div class="sidenav-header d-flex align-items-center">
-        <a class="navbar-brand" href="../../pages/dashboards/dashboard.html">
-          <img src="../../assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
+        <a class="navbar-brand" href="/dashboard">
+          <%= image_tag("brand/blue.png", class: "navbar-brand-img", alt: "...") %>
         </a>
         <div class="ml-auto">
           <!-- Sidenav toggler -->
@@ -43,10 +42,10 @@
               <div class="collapse show" id="navbar-dashboards">
                 <ul class="nav nav-sm flex-column">
                   <li class="nav-item">
-                    <a href="../../pages/dashboards/dashboard.html" class="nav-link">Dashboard</a>
+                    <a href="/pages/dashboard" class="nav-link">Dashboard</a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../pages/dashboards/alternative.html" class="nav-link">Alternative</a>
+                    <a href="/pages/dashboard_alternative" class="nav-link">Alternative</a>
                   </li>
                 </ul>
               </div>
@@ -59,22 +58,22 @@
               <div class="collapse" id="navbar-examples">
                 <ul class="nav nav-sm flex-column">
                   <li class="nav-item">
-                    <a href="../../pages/examples/pricing.html" class="nav-link">Pricing</a>
+                    <a href="/pages/pricing" class="nav-link">Pricing</a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../pages/examples/login.html" class="nav-link">Login</a>
+                    <a href="/pages/login" class="nav-link">Login</a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../pages/examples/register.html" class="nav-link">Register</a>
+                    <a href="/pages/register" class="nav-link">Register</a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../pages/examples/lock.html" class="nav-link">Lock</a>
+                    <a href="/pages/lock" class="nav-link">Lock</a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../pages/examples/timeline.html" class="nav-link">Timeline</a>
+                    <a href="/pages/timeline" class="nav-link">Timeline</a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../pages/examples/profile.html" class="nav-link">Profile</a>
+                    <a href="/pages/profile" class="nav-link">Profile</a>
                   </li>
                 </ul>
               </div>
@@ -87,22 +86,22 @@
               <div class="collapse" id="navbar-components">
                 <ul class="nav nav-sm flex-column">
                   <li class="nav-item">
-                    <a href="../../pages/components/buttons.html" class="nav-link">Buttons</a>
+                    <a href="/pages/buttons" class="nav-link">Buttons</a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../pages/components/cards.html" class="nav-link">Cards</a>
+                    <a href="/pages/cards" class="nav-link">Cards</a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../pages/components/grid.html" class="nav-link">Grid</a>
+                    <a href="/pages/grid" class="nav-link">Grid</a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../pages/components/notifications.html" class="nav-link">Notifications</a>
+                    <a href="/pages/notifications" class="nav-link">Notifications</a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../pages/components/icons.html" class="nav-link">Icons</a>
+                    <a href="/pages/icons" class="nav-link">Icons</a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../pages/components/typography.html" class="nav-link">Typography</a>
+                    <a href="/pages/typography" class="nav-link">Typography</a>
                   </li>
                   <li class="nav-item">
                     <a href="#navbar-multilevel" class="nav-link" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-multilevel">Multi level</a>
@@ -131,13 +130,13 @@
               <div class="collapse" id="navbar-forms">
                 <ul class="nav nav-sm flex-column">
                   <li class="nav-item">
-                    <a href="../../pages/forms/elements.html" class="nav-link">Elements</a>
+                    <a href="/pages/elements" class="nav-link">Elements</a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../pages/forms/components.html" class="nav-link">Components</a>
+                    <a href="/pages/components" class="nav-link">Components</a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../pages/forms/validation.html" class="nav-link">Validation</a>
+                    <a href="/pages/validation" class="nav-link">Validation</a>
                   </li>
                 </ul>
               </div>
@@ -150,13 +149,13 @@
               <div class="collapse" id="navbar-tables">
                 <ul class="nav nav-sm flex-column">
                   <li class="nav-item">
-                    <a href="../../pages/tables/tables.html" class="nav-link">Tables</a>
+                    <a href="/pages/tables" class="nav-link">Tables</a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../pages/tables/sortable.html" class="nav-link">Sortable</a>
+                    <a href="/pages/sortable" class="nav-link">Sortable</a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../pages/tables/datatables.html" class="nav-link">Datatables</a>
+                    <a href="/pages/datatables" class="nav-link">Datatables</a>
                   </li>
                 </ul>
               </div>
@@ -169,28 +168,28 @@
               <div class="collapse" id="navbar-maps">
                 <ul class="nav nav-sm flex-column">
                   <li class="nav-item">
-                    <a href="../../pages/maps/google.html" class="nav-link">Google</a>
+                    <a href="../../pages/maps/google" class="nav-link">Google</a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../pages/maps/vector.html" class="nav-link">Vector</a>
+                    <a href="../../pages/maps/vector" class="nav-link">Vector</a>
                   </li>
                 </ul>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../../pages/widgets.html">
+              <a class="nav-link" href="../../pages/widgets">
                 <i class="ni ni-archive-2 text-green"></i>
                 <span class="nav-link-text">Widgets</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../../pages/charts.html">
+              <a class="nav-link" href="../../pages/charts">
                 <i class="ni ni-chart-pie-35 text-info"></i>
                 <span class="nav-link-text">Charts</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../../pages/calendar.html">
+              <a class="nav-link" href="../../pages/calendar">
                 <i class="ni ni-calendar-grid-58 text-red"></i>
                 <span class="nav-link-text">Calendar</span>
               </a>
@@ -203,25 +202,25 @@
           <!-- Navigation -->
           <ul class="navbar-nav mb-md-3">
             <li class="nav-item">
-              <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html" target="_blank">
+              <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview" target="_blank">
                 <i class="ni ni-spaceship"></i>
                 <span class="nav-link-text">Getting started</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html" target="_blank">
+              <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors" target="_blank">
                 <i class="ni ni-palette"></i>
                 <span class="nav-link-text">Foundation</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html" target="_blank">
+              <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts" target="_blank">
                 <i class="ni ni-ui-04"></i>
                 <span class="nav-link-text">Components</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/plugins/charts.html" target="_blank">
+              <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/plugins/charts" target="_blank">
                 <i class="ni ni-chart-pie-35"></i>
                 <span class="nav-link-text">Plugins</span>
               </a>
@@ -283,7 +282,7 @@
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <!-- Avatar -->
-                        <img alt="Image placeholder" src="../../assets/img/theme/team-1.jpg" class="avatar rounded-circle">
+                        <%= image_tag("theme/team-1.jpg", class: "avatar rounded-circle", alt: "...") %>
                       </div>
                       <div class="col ml--2">
                         <div class="d-flex justify-content-between align-items-center">
@@ -302,7 +301,7 @@
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <!-- Avatar -->
-                        <img alt="Image placeholder" src="../../assets/img/theme/team-2.jpg" class="avatar rounded-circle">
+                        <%= image_tag("theme/team-2.jpg", class: "avatar rounded-circle", alt: "...") %>
                       </div>
                       <div class="col ml--2">
                         <div class="d-flex justify-content-between align-items-center">
@@ -321,7 +320,7 @@
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <!-- Avatar -->
-                        <img alt="Image placeholder" src="../../assets/img/theme/team-3.jpg" class="avatar rounded-circle">
+                        <%= image_tag("theme/team-3.jpg", class: "avatar rounded-circle", alt: "...") %>
                       </div>
                       <div class="col ml--2">
                         <div class="d-flex justify-content-between align-items-center">
@@ -340,7 +339,7 @@
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <!-- Avatar -->
-                        <img alt="Image placeholder" src="../../assets/img/theme/team-4.jpg" class="avatar rounded-circle">
+                        <%= image_tag("theme/team-4.jpg", class: "avatar rounded-circle", alt: "...") %>
                       </div>
                       <div class="col ml--2">
                         <div class="d-flex justify-content-between align-items-center">
@@ -359,7 +358,7 @@
                     <div class="row align-items-center">
                       <div class="col-auto">
                         <!-- Avatar -->
-                        <img alt="Image placeholder" src="../../assets/img/theme/team-5.jpg" class="avatar rounded-circle">
+                        <%= image_tag("theme/team-5.jpg", class: "avatar rounded-circle", alt: "...") %>
                       </div>
                       <div class="col ml--2">
                         <div class="d-flex justify-content-between align-items-center">
@@ -430,7 +429,7 @@
               <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="media align-items-center">
                   <span class="avatar avatar-sm rounded-circle">
-                    <img alt="Image placeholder" src="../../assets/img/theme/team-4.jpg">
+                    <%= image_tag("theme/team-4.jpg", class: "", alt: "...") %>
                   </span>
                   <div class="media-body ml-2 d-none d-lg-block">
                     <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
@@ -658,7 +657,7 @@
                     <div class="col-auto">
                       <!-- Avatar -->
                       <a href="#" class="avatar rounded-circle">
-                        <img alt="Image placeholder" src="../../assets/img/theme/team-1.jpg">
+                        <%= image_tag("theme/team-1.jpg", class: "", alt: "...") %>
                       </a>
                     </div>
                     <div class="col ml--2">
@@ -678,7 +677,7 @@
                     <div class="col-auto">
                       <!-- Avatar -->
                       <a href="#" class="avatar rounded-circle">
-                        <img alt="Image placeholder" src="../../assets/img/theme/team-2.jpg">
+                        <%= image_tag("theme/team-2.jpg", class: "", alt: "...") %>
                       </a>
                     </div>
                     <div class="col ml--2">
@@ -1661,7 +1660,7 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      /argon/index.html
+                      /argon/index
                     </th>
                     <td>
                       3,985
@@ -1675,7 +1674,7 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      /argon/charts.html
+                      /argon/charts
                     </th>
                     <td>
                       3,513
@@ -1689,7 +1688,7 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      /argon/tables.html
+                      /argon/tables
                     </th>
                     <td>
                       2,050
@@ -1703,7 +1702,7 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      /argon/profile.html
+                      /argon/profile
                     </th>
                     <td>
                       1,795
