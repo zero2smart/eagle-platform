@@ -24,6 +24,8 @@ gem 'haml'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
+gem 'jquery-scrollbar-rails'
+
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -84,6 +86,8 @@ group :development, :test do
   gem 'simplecov', require:  false
   gem 'dotenv-rails'
   gem 'mock_redis'
+
+  gem 'bootstrap', '~> 4.2.1'
 
   # Nice formatting for Rspec tests
   gem 'fuubar'
