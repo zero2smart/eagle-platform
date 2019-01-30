@@ -14,7 +14,7 @@ module API
             def dispatch_item_list
               [
                 {
-                    "job_id": 190027-01,
+                    "job_id": "190027-01",
                     "quarry_name": "Pulled From API",
                     "quarry_address": "7500 5W 23rd ST.",
                     "material": "Blended Fill",
@@ -33,7 +33,7 @@ module API
                     "date": "12-01-2018"
                 },
                 {
-                    "job_id": 190028-01,
+                    "job_id": "190028-01",
                     "quarry_name": "Eagle / Persant",
                     "quarry_address": "7500 5W 23rd ST.",
                     "material": "Blended Fill",
@@ -52,7 +52,7 @@ module API
                     "date": "12-01-2018"
                 },
                 {
-                    "job_id": 190028-02,
+                    "job_id": "190028-02",
                     "quarry_name": "Eagle / Persant",
                     "quarry_address": "7500 5W 23rd ST.",
                     "material": "Blended Fill",
