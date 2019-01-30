@@ -14,7 +14,26 @@ module API
             def dispatch_item_list
               [
                 {
-                    "job_id": 1235,
+                    "job_id": 190027-01,
+                    "quarry_name": "Pulled From API",
+                    "quarry_address": "7500 5W 23rd ST.",
+                    "material": "Blended Fill",
+                    "customer_name": "Ozinga",
+                    "job_site": "2551 SW 13TH",
+                    "haul_rate": 5.3,
+                    "quantity": "60-70 Loads",
+                    "status": "active",
+                    "trucks": [
+                        401,
+                        402,
+                        403,
+                        404
+                    ],
+                    "dispatched_trucks": [],
+                    "date": "12-01-2018"
+                },
+                {
+                    "job_id": 190028-01,
                     "quarry_name": "Eagle / Persant",
                     "quarry_address": "7500 5W 23rd ST.",
                     "material": "Blended Fill",
@@ -33,7 +52,7 @@ module API
                     "date": "12-01-2018"
                 },
                 {
-                    "job_id": 1236,
+                    "job_id": 190028-02,
                     "quarry_name": "Eagle / Persant",
                     "quarry_address": "7500 5W 23rd ST.",
                     "material": "Blended Fill",
