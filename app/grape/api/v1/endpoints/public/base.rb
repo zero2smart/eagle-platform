@@ -11,7 +11,7 @@ module API
           mount API::V1::Endpoints::Public::Registration
           
           # Temporary
-          mount API::V1::Endpoints::Public::Dispatch
+          mount API::V1::Endpoints::Public::Temporary
         end
       end
     end

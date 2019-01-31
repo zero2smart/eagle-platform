@@ -155,12 +155,11 @@ module API
         included do
           helpers do
             def respond(code, data, message="")
-              # {
-              #   code: code,
-              #   data: serialize(data),
-              #   message: message
-              # }
-              data
+              {
+                code: code,
+                data: serialize(data),
+                message: message
+              }
             end
 
             def strip_protected_attrs(obj, options={})

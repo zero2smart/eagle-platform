@@ -6,7 +6,7 @@ module API
           include API::V1::Utils::UserAuthentication::Active
 
           # Load all Authenticated Endpoints
-          mount API::V1::Endpoints::Authenticated::Trucks
+          # mount API::V1::Endpoints::Authenticated::Trucks
         end
       end
     end

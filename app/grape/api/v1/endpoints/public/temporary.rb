@@ -2,15 +2,47 @@ module API
   module V1
     module Endpoints
       module Public
-        class Dispatch < Grape::API
+        class Temporary < Grape::API
           resource :dispatch do
             desc "Return active Dispatch items"
             get do
               respond 200, dispatch_item_list
             end
           end
+
+          resource :trucks do
+            desc "Return available Trucks"
+            get do
+              respond 200, truck_list
+            end
+          end
           
           helpers do
+            def truck_list
+              [
+                101,
+                102,
+                103,
+                104,
+                105,
+                106,
+                107,
+                108,
+                109,
+                110,
+                111,
+                112,
+                113,
+                114,
+                115,
+                116,
+                117,
+                118,
+                119,
+                120
+              ]
+            end
+
             def dispatch_item_list
               [
                 {
