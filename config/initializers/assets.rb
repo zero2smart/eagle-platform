@@ -12,3 +12,5 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 Rails.application.config.assets.precompile += %w( application_footer.js )
+Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|woff2|ttf)$/
+Rails.application.config.assets.precompile += %w( theme.js theme.css )

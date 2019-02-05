@@ -8,8 +8,5 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
   
-  resource :theme, only: [:index], controller: :theme do
-    get '', action: :index, as: :index
-    get 'dashboard', action: :index, as: :dashboard
-  end
+  get 'theme/(:page)' => 'theme#show', as: 'theme'
 end

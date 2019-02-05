@@ -19,6 +19,10 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 gem 'haml'
+gem 'bootstrap', '~> 4.0.0'
+
+gem 'sprockets'
+gem 'sprockets-es6'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -88,8 +92,6 @@ group :development, :test do
   gem 'simplecov', require:  false
   gem 'dotenv-rails'
   gem 'mock_redis'
-
-  gem 'bootstrap', '~> 4.2.1'
 
   # Nice formatting for Rspec tests
   gem 'fuubar'
