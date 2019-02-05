@@ -24,5 +24,9 @@ Rails.application.routes.draw do
     end
   end
   
+  resource :dispatch, only: [:index], controller: 'dispatch' do
+    get '', action: :index, as: ''
+  end
+  
   get 'theme/(:page)' => 'theme#show', as: 'theme'
 end
