@@ -22,7 +22,6 @@
 
 /public/api/
 /public/system/
-/public/packs/
 
 /.powder
 
@@ -43,4 +42,9 @@ erd.pdf
 # SSL Certificate files
 server.*
 
+/public/packs/
+/public/packs-test
 /node_modules
+
+yarn-debug.log*
+.yarn-integrity
