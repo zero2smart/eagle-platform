@@ -33,7 +33,7 @@ module ApplicationHelper
 
   def active_nav_markup(page, markup=nil)
     if controller_name == page.to_s
-      markup || content_tag(:span, "(current)", class: "sr-only") 
+      markup || "active" 
     end
   end
   

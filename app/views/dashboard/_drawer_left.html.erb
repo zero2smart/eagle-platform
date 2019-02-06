@@ -66,34 +66,41 @@
       <div class="sidebar-heading">Management</div>
       <div class="sidebar-block p-0">
         <ul class="sidebar-menu" id="components_menu">
-          <li class="sidebar-menu-item <% if current_page?(theme_path(:ui_buttons))%>active<% end%>">
-            <a class="sidebar-menu-button" href="<%= theme_path(:ui_buttons) %>">
+          <li class="sidebar-menu-item <%= active_nav_markup(:trucks) %>">
+            <a class="sidebar-menu-button" href="<%= dashboard_trucks_path %>">
               <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">directions_bus</i>
               <span class="sidebar-menu-text">Trucks</span>
             </a>
           </li>
-          <li class="sidebar-menu-item <% if current_page?(theme_path(:ui_alerts))%>active<% end%>">
-            <a class="sidebar-menu-button" href="<%= theme_path(:ui_alerts) %>">
+          <li class="sidebar-menu-item <%= active_nav_markup(:customers) %>">
+            <a class="sidebar-menu-button" href="<%= dashboard_customers_path %>">
               <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">contacts</i>
               <span class="sidebar-menu-text">Customers</span>
             </a>
           </li>
-          <li class="sidebar-menu-item <% if current_page?(theme_path(:ui_avatars))%>active<% end%>">
-            <a class="sidebar-menu-button" href="<%= theme_path(:ui_avatars) %>">
+          <li class="sidebar-menu-item <%= active_nav_markup(:materials) %>">
+            <a class="sidebar-menu-button" href="<%= dashboard_materials_path %>">
               <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">list</i>
               <span class="sidebar-menu-text">Materials</span>
               <%# <span class="badge badge-primary ml-auto">NEW</span> %>
             </a>
           </li>
-          <li class="sidebar-menu-item <% if current_page?(theme_path(:ui_avatars))%>active<% end%>">
-            <a class="sidebar-menu-button" href="<%= theme_path(:ui_avatars) %>">
+          <li class="sidebar-menu-item <%= active_nav_markup(:locations) %>">
+            <a class="sidebar-menu-button" href="<%= dashboard_locations_path %>">
               <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">map</i>
               <span class="sidebar-menu-text">Locations</span>
               <%# <span class="badge badge-primary ml-auto">NEW</span> %>
             </a>
           </li>
-          <li class="sidebar-menu-item <% if current_page?(theme_path(:ui_avatars))%>active<% end%>">
-            <a class="sidebar-menu-button" href="<%= theme_path(:ui_avatars) %>">
+          <li class="sidebar-menu-item <%= active_nav_markup(:users) %>">
+            <a class="sidebar-menu-button" href="<%= dashboard_users_path %>">
+              <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">person</i>
+              <span class="sidebar-menu-text">Users</span>
+              <%# <span class="badge badge-primary ml-auto">NEW</span> %>
+            </a>
+          </li>
+          <li class="sidebar-menu-item <%= active_nav_markup(:settings) %>">
+            <a class="sidebar-menu-button" href="<%= dashboard_settings_path %>">
               <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">settings</i>
               <span class="sidebar-menu-text">Settings</span>
               <%# <span class="badge badge-primary ml-auto">NEW</span> %>
