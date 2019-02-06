@@ -18,8 +18,10 @@ Rails.application.routes.draw do
     resources :materials, only: [:index], controller: 'dashboard/materials'
     resources :users, only: [:index], controller: 'dashboard/users'
     resources :locations, only: [:index], controller: 'dashboard/locations'
-
-
+    resources :sales, only: [:index], controller: 'dashboard/sales'
+    resource :billing, only: [:index], controller: 'dashboard/billing' do
+      get '', action: :index, as: ''
+    end
   end
   
   get 'theme/(:page)' => 'theme#show', as: 'theme'

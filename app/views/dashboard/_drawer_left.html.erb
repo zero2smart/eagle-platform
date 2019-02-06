@@ -41,8 +41,8 @@
       <div class="sidebar-heading">Departments</div>
       <div class="sidebar-block p-0">
         <ul class="sidebar-menu" id="components_menu">
-          <li class="sidebar-menu-item <% if current_page?(theme_path(:ui_buttons))%>active<% end%>">
-            <a class="sidebar-menu-button" href="<%= theme_path(:ui_buttons) %>">
+          <li class="sidebar-menu-item <%= active_nav_markup(:sales) %>">
+            <a class="sidebar-menu-button" href="<%= dashboard_sales_path %>">
               <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">attach_money</i>
               <span class="sidebar-menu-text">Sales</span>
             </a>
@@ -53,8 +53,8 @@
               <span class="sidebar-menu-text">Dispatch</span>
             </a>
           </li>
-          <li class="sidebar-menu-item <% if current_page?(theme_path(:ui_avatars))%>active<% end%>">
-            <a class="sidebar-menu-button" href="<%= theme_path(:ui_avatars) %>">
+          <li class="sidebar-menu-item <%= active_nav_markup(:billing) %>">
+            <a class="sidebar-menu-button" href="<%= dashboard_billing_path %>">
               <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">inbox</i>
               <span class="sidebar-menu-text">Billing</span>
               <%# <span class="badge badge-primary ml-auto">NEW</span> %>
