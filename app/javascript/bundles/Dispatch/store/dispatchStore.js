@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import dispatchReducer from '../reducers/dispatchReducer';
+import rootReducer from '../reducers/rootReducer';
 
 import createSagaMiddleware from 'redux-saga';
 import createHistory from 'history/createBrowserHistory';
@@ -27,7 +27,7 @@ const middleware = [
 //   )
 // );
 const configureStore = createStore(
-  dispatchReducer,
+  rootReducer,
   initialState,
   composeEnhancers(applyMiddleware(...middleware))
 );
