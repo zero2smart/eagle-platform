@@ -22,6 +22,7 @@
 
 /public/api/
 /public/system/
+/public/packs/
 
 /.powder
 
@@ -41,3 +42,5 @@ erd.pdf
 
 # SSL Certificate files
 server.*
+
+/node_modules
