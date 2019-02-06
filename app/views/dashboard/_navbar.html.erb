@@ -17,23 +17,9 @@
       <span>StackRails</span>
     </a>
     
-    <form class="search-form d-none d-sm-flex flex" action="#">
-      <button class="btn" type="submit" role="button"><i class="material-icons">search</i></button>
-      <input type="text" class="form-control" placeholder="Search">
-    </form>
     
     <ul class="nav navbar-nav ml-auto d-none d-md-flex">
-      <li class="nav-item">
-        <a href="" class="nav-link">
-          <i class="material-icons">help_outline</i> Get Help
-        </a>
-      </li>
-      <li class="nav-item mr-3">
-        <a href="#pricing.html" class="btn btn-outline-warning">
-          <i class="material-icons m  r-1">monetization_on</i> PURCHASE
-        </a>
-      </li>
-      <li class="nav-item dropdown">
+     <li class="nav-item dropdown">
         <a href="#notifications_menu" class="nav-link dropdown-toggle" data-toggle="dropdown" data-caret="false">
           <i class="material-icons nav-icon navbar-notifications-indicator">notifications</i>
         </a>
@@ -103,8 +89,6 @@
             <div>@adriandemian</div>
           </div>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="<%= theme_path(:index) %>">Dashboard</a>
-          <a class="dropdown-item" href="#">My profile</a>
           <a class="dropdown-item" href="<%= theme_path(:edit_account)%>">Edit account</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="<%= theme_path(:login)%>">Logout</a>

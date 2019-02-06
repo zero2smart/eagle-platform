@@ -3,29 +3,11 @@
     <div class="sidebar sidebar-light sidebar-left simplebar" data-simplebar>
       <div class="d-flex align-items-center sidebar-p-a border-bottom">
         <a href="#" class="flex d-flex align-items-center text-body text-underline-0">
-          <span class="avatar mr-3">
-            <img src="<%= image_path('avatar/demi.png')%>" alt="avatar" class="avatar-img rounded-circle">
-          </span>
           <span class="flex d-flex flex-column">
             <strong><%= current_user.name %></strong>
             <small class="text-muted text-uppercase">Account Manager</small>
           </span>
         </a>
-        <div class="dropdown ml-auto">
-          <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted"><i class="material-icons">more_vert</i></a>
-         <div class="dropdown-menu dropdown-menu-right">
-            <div class="dropdown-item-text dropdown-item-text--lh">
-              <div><strong><%= current_user.short_name %></strong></div>
-              <div><%= current_user.email %></div>
-            </div>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="<%= dashboard_path %>">Dashboard</a>
-            <a class="dropdown-item" href="#">My profile</a>
-            <a class="dropdown-item" href="<%= dashboard_settings_path %>">Settings</a>
-            <div class="dropdown-divider"></div>
-            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </div>
       </div>
 
       <div class="sidebar-heading sidebar-m-t">Menu</div>
