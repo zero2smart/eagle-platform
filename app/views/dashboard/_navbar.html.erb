@@ -1,0 +1,44 @@
+<div class="navbar navbar-expand-sm navbar-main navbar-light bg-light pr-0" id="navbar" data-primary>
+  <div class="container-fluid p-0">
+    <!-- Navbar toggler -->
+    <button class="navbar-toggler navbar-toggler-right d-block d-md-none" type="button" data-toggle="sidebar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Brand -->
+    <a href="<%= dashboard_path %>" class="navbar-brand">
+      <span class="navbar-brand-icon logo">&nbsp;</span>
+    </a>
+
+    <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
+      <ul class="navbar-nav m-auto">
+        <li class="nav-item <%= active_nav_markup(:dashboard, 'active') %>">
+          <a class="nav-link" href="<%= dashboard_path %>">Dashboard<%= active_nav_markup(:dashboard) %></a>
+        </li>
+        <li class="nav-item <%= active_nav_markup(:settings, 'active') %>">
+          <a class="nav-link" href="<%= dashboard_settings_path %>">Settings<%= active_nav_markup(:settings) %></a>
+        </li>
+      </ul>
+    </div>
+    
+    
+    <ul class="nav navbar-nav d-none d-sm-flex border-left navbar-height align-items-center">
+      <li class="nav-item dropdown">
+        <a href="#account_menu" class="nav-link dropdown-toggle" data-toggle="dropdown" data-caret="false">
+          <img src="<%= image_path('temp/avatar/demi.png')%>" class="rounded-circle" width="32" alt="Frontted">
+        </a>
+        <div id="account_menu" class="dropdown-menu dropdown-menu-right">
+          <div class="dropdown-item-text dropdown-item-text--lh">
+            <div><strong><%= current_user.name %></strong></div>
+            <div><%= current_user.email %></div>
+          </div>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">My profile</a>
+          <div class="dropdown-divider"></div>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</div>

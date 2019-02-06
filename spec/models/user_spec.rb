@@ -14,6 +14,7 @@
 #  name                   :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  auth_token             :string
 #
 
 require 'rails_helper'
