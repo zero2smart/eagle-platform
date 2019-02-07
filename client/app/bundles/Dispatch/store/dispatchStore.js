@@ -7,7 +7,7 @@ import { routerMiddleware } from 'react-router-redux';
 import sagas from '../sagas/dispatchSaga';
 
 const sagaMiddleware = createSagaMiddleware();
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__ || compose;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export const history = createHistory();
 
