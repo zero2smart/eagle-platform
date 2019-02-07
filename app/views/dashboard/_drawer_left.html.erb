@@ -19,18 +19,18 @@
             <span class="ml-auto sidebar-menu-toggle-icon"></span>
           </a>
           <ul class="sidebar-submenu collapse <% if current_page?(root_path) || current_page?(theme_path(:index)) || current_page?(theme_path(:staff)) ||  current_page?(theme_path(:analytics)) %> show<% end %>" id="dashboards_menu">
-            <li class="sidebar-menu-item <% if current_page?(root_path) || current_page?(theme_path(:index))%>active<% end%>">
-              <a class="sidebar-menu-button" href="<%= theme_path(:index) %>">
+            <li class="sidebar-menu-item <%= active_nav_markup(:dashboard) %>">
+              <a class="sidebar-menu-button" href="<%= dashboard_path %>">
                 <span class="sidebar-menu-text">My Dashboard</span>
               </a>
             </li>
-            <li class="sidebar-menu-item <% if current_page?(theme_path(:staff))%>active<% end%>">
-              <a class="sidebar-menu-button" href="<%= theme_path(:staff) %>">
+            <li class="sidebar-menu-item <%= active_nav_markup(:sales) %>">
+              <a class="sidebar-menu-button" href="<%= dashboard_sales_path %>">
                   <span class="sidebar-menu-text">Sales</span>
               </a>
             </li>
-            <li class="sidebar-menu-item <% if current_page?(theme_path(:analytics))%>active<% end%>">
-              <a class="sidebar-menu-button" href="<%= theme_path(:analytics) %>">
+            <li class="sidebar-menu-item <%= active_nav_markup(:dispatch) %>">
+              <a class="sidebar-menu-button" href="<%= dispatch_path %>">
                   <span class="sidebar-menu-text">Dispatch</span>
               </a>
             </li>
@@ -47,8 +47,8 @@
               <span class="sidebar-menu-text">Sales</span>
             </a>
           </li>
-          <li class="sidebar-menu-item <% if current_page?(theme_path(:ui_alerts))%>active<% end%>">
-            <a class="sidebar-menu-button" href="<%= theme_path(:ui_alerts) %>">
+          <li class="sidebar-menu-item <%= active_nav_markup(:dispatch) %>">
+            <a class="sidebar-menu-button" href="<%= dispatch_path %>">
               <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">directions</i>
               <span class="sidebar-menu-text">Dispatch</span>
             </a>
