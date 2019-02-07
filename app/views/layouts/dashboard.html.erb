@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'dashboard', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -17,7 +18,7 @@
       <!-- Header -->
       <div id="header" class="mdk-header js-mdk-header m-0" data-fixed>
         <div class="mdk-header__content">
-          <%= render 'dashboard/navbar'%>
+          <%= render 'shared/navbar'%>
         </div>
       </div>
       <!-- // END Header -->

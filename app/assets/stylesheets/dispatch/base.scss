@@ -3,10 +3,10 @@
 @import 'colors';
 @import 'jobs';
 @import 'modals';
-@import 'header';
+// @import 'header';
 
 // Plugins
-@import 'bootstrap';
+// @import 'bootstrap';
 
 
 html, body {
@@ -94,6 +94,7 @@ html a {
   position: relative;
   min-height: 600px;
   overflow: hidden;
+  margin-top: 86px;
 
   .tab-block {
   display: flex;
