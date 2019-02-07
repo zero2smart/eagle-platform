@@ -13,8 +13,12 @@
     <%= javascript_pack_tag 'dispatch-bundle' %>
   </head>
   <body>
-
-    <%= yield %>
-
+    <div className="root d-flex">
+      <div className="content-wrapper">
+        <%= render 'dispatch/navbar' %>
+        <%#= render 'dispatch/header' %>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
