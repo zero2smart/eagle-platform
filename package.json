@@ -27,5 +27,12 @@
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.23.0",
     "webpack-dev-server": "2.11.2"
-  }
+  },
+  "scripts": {
+    "postinstall": "cd client && yarn install"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "client/node_modules"
+  ]
 }
