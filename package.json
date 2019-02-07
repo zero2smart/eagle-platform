@@ -29,7 +29,7 @@
     "webpack-dev-server": "2.11.2"
   },
   "scripts": {
-    "postinstall": "cd client && yarn install"
+    
   },
   "engines": {
     "node": "11.9.0",
