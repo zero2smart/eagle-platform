@@ -5,130 +5,151 @@ import { getJobsAction, getAvailableTrucksAction } from '../../actions/dispatchA
 import { connect } from 'react-redux';
 import { Table } from 'reactstrap';
 import {
-    SortableContainer,
-    SortableElement,
-    arrayMove,
+  SortableContainer,
+  SortableElement,
+  arrayMove,
 } from 'react-sortable-hoc';
 import { ACTIVE_TAB, COMPLETE_TAB } from '../../constants/dispatchConstants';
 
 class JobManagement extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            jobToggleStatus: []
-        };
+    this.state = {
+      jobToggleStatus: [],
+      jobs: []
+    };
 
-        this.applyToggleStatus = this.applyToggleStatus.bind(this);
-    }
+    this.applyToggleStatus = this.applyToggleStatus.bind(this);
+  }
 
-    componentDidMount() {
-        this.props.getAvailableTrucks();
-    }
+  componentDidMount() {
+    this.props.getAvailableTrucks();
+  }
 
-    shouldComponentUpdate(prevProps, prevState) {
-        return true;
-    }
+  componentWillReceiveProps(prevProps, prevState) {
+    // if (prevProps.tabStatus === ACTIVE_TAB) {
+    //     debugger;
+    //     this.setState({
+    //         jobs: prevProps.jobs.filter(job => job.status === "active").filter(job => job.job_id.toString().indexOf(prevProps.searchTerm) !== -1
+    //             || job.customer_name.toLowerCase().indexOf(prevProps.searchTerm.toLowerCase()) !== -1
+    //             || prevProps.trucks.includes(Number(prevProps.searchTerm))
+    //             || job.dispatched_trucks.includes(Number(prevProps.searchTerm))) });
+    // } else if (prevProps.tabStatus === COMPLETED_TAB) {
+    //     this.setState({
+    //         jobs: prevProps.jobs.filter(job => job.status === "completed").filter(job => job.job_id.toString().indexOf(prevProps.searchTerm) !== -1
+    //             || job.customer_name.toLowerCase().indexOf(prevProps.searchTerm.toLowerCase()) !== -1
+    //             || prevProps.trucks.includes(Number(prevProps.searchTerm))
+    //             || job.dispatched_trucks.includes(Number(prevProps.searchTerm)))
+    //             .filter(job => new Date(job.date) >= prevProps.startDate
+    //                 && new Date(job.date) <= prevProps.endDate) });
+    // }
 
-    applyToggleStatus(jts) {
-        this.setState({ jobToggleStatus: jts });
-    }
+    // console.log(this.state.jobs);
+    console.log(this.props);
+    console.log(prevProps);
+  }
 
-    render() {
-        let jts = this.state.jobToggleStatus;
-        let dd = {
-            opacity: 1 + ' !important',
-            zIndex: 100
-        };
+  applyToggleStatus(jts) {
+    this.setState({ jobToggleStatus: jts });
+  }
 
-        return (
-            <div className="job-management-container">
-                <Table>
-                    <tbody>
-                        {
-                            this.props.tabStatus === ACTIVE_TAB ?
-                                this.props.jobs.filter(job => job.status === "active").filter(job => job.job_id.toString().indexOf(this.props.searchTerm) !== -1
-                                || job.customer_name.toLowerCase().indexOf(this.props.searchTerm.toLowerCase()) !== -1
-                                || this.props.trucks.includes(Number(this.props.searchTerm))
-                                || job.dispatched_trucks.includes(Number(this.props.searchTerm))).map((job, i) => {
-                                let isAllMinus = true;
+  render() {
+    let jts = this.state.jobToggleStatus;
+    let dd = {
+      opacity: 1 + ' !important',
+      zIndex: 100
+    };
 
-                                for (let key in jts) {
-                                    if (jts[key] === true) {
-                                        isAllMinus = false;
-                                        break;
-                                    }
-                                }
+    return (
+      <div className="job-management-container">
+        <Table>
+          <tbody>
+            {
+              this.props.tabStatus === ACTIVE_TAB ?
+                this.props.jobs.filter(job => job.status === "active").filter(job => job.job_id.toString().indexOf(this.props.searchTerm) !== -1
+                || job.customer_name.toLowerCase().indexOf(this.props.searchTerm.toLowerCase()) !== -1
+                || this.props.trucks.includes(Number(this.props.searchTerm))
+                || job.dispatched_trucks.includes(Number(this.props.searchTerm))).map((job, i) => {
+                let isAllMinus = true;
 
-                                return <JobItem
-                                        key={job.job_id}
-                                        job={job}
-                                        index={i}
-                                        showTruckList={jts[job.job_id]}
-                                        idx={i}
-                                        trucks={this.props.trucks}
-                                        className={isAllMinus ? 'o-100' : ''}
-                                        hasSearchKeyword={this.props.searchTerm.length === 0 ? false : true}
-                                        applyToggleStatus={this.applyToggleStatus}
-                                        isSorting={this.props.isSorting}
-                                        status={this.props.status} />;
-                            }) :
-                                this.props.jobs.filter(job => job.status === "completed").filter(job => job.job_id.toString().indexOf(this.props.searchTerm) !== -1
-                                || job.customer_name.toLowerCase().indexOf(this.props.searchTerm.toLowerCase()) !== -1
-                                || this.props.trucks.includes(Number(this.props.searchTerm))
-                                || job.dispatched_trucks.includes(Number(this.props.searchTerm)))
-                                .filter(job => new Date(job.date) >= this.props.startDate
-                                    && new Date(job.date) <= this.props.endDate).map((job, i) => {
-                                    let isAllMinus = true;
+                for (let key in jts) {
+                  if (jts[key] === true) {
+                    isAllMinus = false;
+                    break;
+                  }
+                }
 
-                                    for (let key in jts) {
-                                        if (jts[key] === true) {
-                                            isAllMinus = false;
-                                            break;
-                                        }
-                                    }
+                return <JobItem
+                    key={job.job_id}
+                    job={job}
+                    index={i}
+                    showTruckList={jts[job.job_id]}
+                    idx={i}
+                    trucks={this.props.trucks}
+                    className={isAllMinus ? 'o-100' : ''}
+                    hasSearchKeyword={this.props.searchTerm.length === 0 ? false : true}
+                    applyToggleStatus={this.applyToggleStatus}
+                    isSorting={this.props.isSorting}
+                    status={this.props.status} />;
+              }) :
+                this.props.jobs.filter(job => job.status === "completed").filter(job => job.job_id.toString().indexOf(this.props.searchTerm) !== -1
+                || job.customer_name.toLowerCase().indexOf(this.props.searchTerm.toLowerCase()) !== -1
+                || this.props.trucks.includes(Number(this.props.searchTerm))
+                || job.dispatched_trucks.includes(Number(this.props.searchTerm)))
+                .filter(job => new Date(job.date) >= this.props.startDate
+                  && new Date(job.date) <= this.props.endDate).map((job, i) => {
+                  let isAllMinus = true;
 
-                                    return <JobItem
-                                        key={job.job_id}
-                                        job={job}
-                                        index={i}
-                                        showTruckList={jts[job.job_id]}
-                                        idx={i}
-                                        trucks={this.props.trucks}
-                                        className={isAllMinus ? 'o-100' : ''}
-                                        applyToggleStatus={this.applyToggleStatus}
-                                        hasSearchKeyword={this.props.searchTerm.length === 0 ? false : true}
-                                        status={this.props.status} />;
-                                })
-                        }
-                    </tbody>
-                </Table>
-            </div>
-        );
-    }
+                  for (let key in jts) {
+                    if (jts[key] === true) {
+                      isAllMinus = false;
+                      break;
+                    }
+                  }
+
+                  return <JobItem
+                    key={job.job_id}
+                    job={job}
+                    index={i}
+                    showTruckList={jts[job.job_id]}
+                    idx={i}
+                    trucks={this.props.trucks}
+                    isSorting={this.props.isSorting}
+                    className={isAllMinus ? 'o-100' : ''}
+                    applyToggleStatus={this.applyToggleStatus}
+                    hasSearchKeyword={this.props.searchTerm.length === 0 ? false : true}
+                    status={this.props.status} />;
+                })
+            }
+          </tbody>
+        </Table>
+      </div>
+    );
+  }
 }
 
 JobManagement.propTypes = {
-    jobs: PropTypes.array.isRequired,
-    jobToggleStatus: PropTypes.object.isRequired,
-    status: PropTypes.number.isRequired,
-    searchTerm: PropTypes.string.isRequired,
-    startDate: PropTypes.object.isRequired,
-    endDate: PropTypes.object.isRequired,
-    tabStatus: PropTypes.number.isRequired,
-    getAvailableTrucks: PropTypes.func.isRequired,
-    trucks: PropTypes.array.isRequired,
-    isSorting: PropTypes.bool.isRequired
+  jobs: PropTypes.array.isRequired,
+  jobToggleStatus: PropTypes.object.isRequired,
+  status: PropTypes.number.isRequired,
+  searchTerm: PropTypes.string.isRequired,
+  startDate: PropTypes.object.isRequired,
+  endDate: PropTypes.object.isRequired,
+  tabStatus: PropTypes.number.isRequired,
+  getAvailableTrucks: PropTypes.func.isRequired,
+  trucks: PropTypes.array.isRequired,
+  isSorting: PropTypes.bool.isRequired
 }
 
 const mapStateToProps = state => ({
-    jobToggleStatus: state.dispatch.jobToggleStatus,
-    tabStatus: state.dispatch.tabStatus,
-    trucks: state.dispatch.trucks
+  jobToggleStatus: state.dispatch.jobToggleStatus,
+  tabStatus: state.dispatch.tabStatus,
+  trucks: state.dispatch.trucks
 });
 
 const mapDispatchToProps = dispatch => ({
-    getAvailableTrucks: () => dispatch(getAvailableTrucksAction())
+  getAvailableTrucks: () => dispatch(getAvailableTrucksAction())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SortableContainer(JobManagement));

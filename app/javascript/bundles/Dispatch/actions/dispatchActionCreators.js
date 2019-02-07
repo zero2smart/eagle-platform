@@ -1,16 +1,16 @@
 /* eslint-disable import/prefer-default-export */
 
 import {
-    TOGGLE_SIDEBAR,
-    GET_JOBS,
-    CHANGE_JOB_TOGGLE_STATUS,
-    REMOVE_JOB_IN_ACTIVE,
-    ADD_TRUCK_TO_LIST,
-    REMOVE_TRUCK_FROM_LIST,
-    ORDER_LIST,
-    UPDATE_JOB,
-    SWITCH_TAB,
-    GET_AVAILABLE_TRUCKS
+  TOGGLE_SIDEBAR,
+  GET_JOBS,
+  CHANGE_JOB_TOGGLE_STATUS,
+  REMOVE_JOB_IN_ACTIVE,
+  ADD_TRUCK_TO_LIST,
+  REMOVE_TRUCK_FROM_LIST,
+  ORDER_LIST,
+  UPDATE_JOB,
+  SWITCH_TAB,
+  GET_AVAILABLE_TRUCKS
 } from '../constants/dispatchConstants';
 import { createAction } from 'redux-actions';
 
