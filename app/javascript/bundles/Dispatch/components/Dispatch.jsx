@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from 'prop-types';
 
 import JobManagement from './JobManagement';
+import Header from './Header';
 
 import { ACTIVE_TAB, COMPLETED_TAB } from '../constants/dispatchConstants';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -129,6 +130,7 @@ class Dispatch extends Component {
             <div className="root d-flex">
               <div className={`${this.props.showSideBar ? '' : 'w-0'} sidebar-wrapper`}></div>
               <div className="content-wrapper">
+                <Header />
                 <main>
                   <div className="dashboard-container">
                     <div className="tab-block">
