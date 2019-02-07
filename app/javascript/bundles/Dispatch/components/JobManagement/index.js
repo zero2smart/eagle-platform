@@ -46,8 +46,8 @@ class JobManagement extends Component {
     // }
 
     // console.log(this.state.jobs);
-    console.log(this.props);
-    console.log(prevProps);
+    // console.log(this.props);
+    // console.log(prevProps);
   }
 
   applyToggleStatus(jts) {
