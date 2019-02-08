@@ -77,6 +77,7 @@ gem 'rack-cors'
 
 gem "react_on_rails", "11.1.4" # Update to the current version
 gem "webpacker", "~> 3" # Newer versions might be supported
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -88,7 +89,6 @@ group :development, :test do
   gem 'factory_bot'
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'faker'
   gem 'shoulda-matchers'
   gem 'rspec-json_expectations'
   gem 'airborne'
