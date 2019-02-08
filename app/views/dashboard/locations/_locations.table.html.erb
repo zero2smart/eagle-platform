@@ -5,6 +5,7 @@
         <th>Name</th>
         <th>E-mail</th>
         <th>Phone</th>
+        <th>Materials</th>
         <th></th>
         </tr
     </thead>
@@ -14,6 +15,7 @@
           <td><strong><%= ['Saint Johns Quarry', 'White Rock Quarry', 'Star Quarries','Haul Quarry'].sample %></strong></td>
           <td><a href="#"><%= Faker::Internet.email %></a></td>
           <td><%= Faker::PhoneNumber.cell_phone %></td>
+          <td><span class="badge badge-light"><%= rand 1..8 %></span></td>
           <td></td>
           <td class="text-right dropdown">
             <a href="" class="text-muted dropdown-toggle" data-toggle="dropdown" data-caret="false"><i class="material-icons">more_vert</i></a>
