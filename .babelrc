@@ -22,11 +22,6 @@
         "spec": true
       }
     ],
-    [
-      "transform-runtime", 
-      {
-        "regenerator": true
-      }
-    ]
+    "transform-runtime"
   ]
 }
