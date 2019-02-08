@@ -47,5 +47,10 @@ module ApplicationHelper
       action_name == "index"
     end
   end
+
+  def show_left_drawer
+    # TODO
+    true
+  end
   
 end

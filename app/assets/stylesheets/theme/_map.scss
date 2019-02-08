@@ -30,7 +30,7 @@
 }
 
 .blue {
-  background-image: url(<%= asset_path 'marker/blue.png' %>)
+  background-image: url(asset-path('marker/blue.png'));
 }
 
 .jqvmap-zoomin,

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
 
-  devise_for :users, skip: [:registrations], controllers: {sessions: "sessions"} do
+  devise_for :users, path: '', path_names: {sign_out: 'logout'}, skip: [:registrations], controllers: {sessions: "sessions"} do
     # get 'forgot_password' => 'devise/passwords#new', as: :new_user_password
   end
 

@@ -1,6 +1,6 @@
 .layout-login {
   background-size: cover;
-  background-image: url('../images/login/alexandre-godreau-431553-unsplash.jpg');
+  background-image: url(asset-path('login/alexandre-godreau-431553-unsplash.jpg'));
   background-repeat: no-repeat;
   position: relative;
   &__overlay {

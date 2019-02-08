@@ -1,9 +1,6 @@
 //** CORE
-// require jquery/dist/jquery.min.js
-// require jquery-ui.min.js
-// require popper.js/dist/umd/popper.js
-// require bootstrap/dist/js/bootstrap.min.js
 //= require jquery
+//= require jquery_ujs
 //= require jquery-ui
 //= require popper
 //= require bootstrap-sprockets

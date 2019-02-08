@@ -8,17 +8,32 @@
             <small class="text-muted text-uppercase">Account Manager</small>
           </span>
         </a>
+        <div class="dropdown ml-auto">
+          <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted"><i class="material-icons">more_vert</i></a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <div class="dropdown-item-text dropdown-item-text--lh">
+              <div><strong><%= current_user.name %></strong></div>
+              <div><%= current_user.email %></div>
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="<%= dashboard_path %>">Dashboard</a>
+            <a class="dropdown-item" href="#">My profile</a>
+            <a class="dropdown-item" href="#">Edit account</a>
+            <div class="dropdown-divider"></div>
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </div>
       </div>
 
       <div class="sidebar-heading sidebar-m-t">Menu</div>
       <ul class="sidebar-menu">
-        <li class="sidebar-menu-item <% if current_page?(root_path) || current_page?(theme_path(:index)) || current_page?(theme_path(:staff)) ||  current_page?(theme_path(:analytics)) %> active open<% end %>">
+        <li class="sidebar-menu-item <%= 'active open' if show_left_drawer %>">
           <a class="sidebar-menu-button" data-toggle="collapse" href="#dashboards_menu">
             <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">dvr</i>
             <span class="sidebar-menu-text">Dashboards</span>
             <span class="ml-auto sidebar-menu-toggle-icon"></span>
           </a>
-          <ul class="sidebar-submenu collapse <% if current_page?(root_path) || current_page?(theme_path(:index)) || current_page?(theme_path(:staff)) ||  current_page?(theme_path(:analytics)) %> show<% end %>" id="dashboards_menu">
+          <ul class="sidebar-submenu collapse show" id="dashboards_menu">
             <li class="sidebar-menu-item <%= active_nav_markup(:dashboard) %>">
               <a class="sidebar-menu-button" href="<%= dashboard_path %>">
                 <span class="sidebar-menu-text">My Dashboard</span>
