@@ -8,6 +8,7 @@
     "@rails/webpacker": "3.5",
     "axios": "^0.18.0",
     "babel-preset-react": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "google-maps-react": "^2.0.2",
     "history": "^4.7.2",
     "prop-types": "^15.6.2",
