@@ -1,0 +1,113 @@
+<div class="mdk-drawer js-mdk-drawer" id="default-drawer" data-align="start">
+  <div class="mdk-drawer__content">
+    <div class="sidebar sidebar-light sidebar-left simplebar" data-simplebar>
+      <div class="d-flex align-items-center sidebar-p-a border-bottom">
+        <a href="#" class="flex d-flex align-items-center text-body text-underline-0">
+          <span class="flex d-flex flex-column">
+            <strong><%#= current_user.name %></strong>
+            <small class="text-muted text-uppercase">Account Manager</small>
+          </span>
+        </a>
+      </div>
+
+      <div class="sidebar-heading sidebar-m-t">Menu</div>
+      <ul class="sidebar-menu">
+        <li class="sidebar-menu-item <% if current_page?(root_path) || current_page?(theme_path(:index)) || current_page?(theme_path(:staff)) ||  current_page?(theme_path(:analytics)) %> active open<% end %>">
+          <a class="sidebar-menu-button" data-toggle="collapse" href="#dashboards_menu">
+            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">dvr</i>
+            <span class="sidebar-menu-text">Dashboards</span>
+            <span class="ml-auto sidebar-menu-toggle-icon"></span>
+          </a>
+          <ul class="sidebar-submenu collapse <% if current_page?(root_path) || current_page?(theme_path(:index)) || current_page?(theme_path(:staff)) ||  current_page?(theme_path(:analytics)) %> show<% end %>" id="dashboards_menu">
+            <li class="sidebar-menu-item <%= active_nav_markup(:dashboard) %>">
+              <a class="sidebar-menu-button" href="<%= dashboard_path %>">
+                <span class="sidebar-menu-text">My Dashboard</span>
+              </a>
+            </li>
+            <li class="sidebar-menu-item <%= active_nav_markup(:sales) %>">
+              <a class="sidebar-menu-button" href="<%= dashboard_sales_path %>">
+                  <span class="sidebar-menu-text">Sales</span>
+              </a>
+            </li>
+            <li class="sidebar-menu-item <%= active_nav_markup(:dispatch) %>">
+              <a class="sidebar-menu-button" href="<%= dispatch_path %>">
+                  <span class="sidebar-menu-text">Dispatch</span>
+              </a>
+            </li>
+          </ul>
+        </li>      
+      </ul>
+
+      <div class="sidebar-heading">Departments</div>
+      <div class="sidebar-block p-0">
+        <ul class="sidebar-menu" id="components_menu">
+          <li class="sidebar-menu-item <%= active_nav_markup(:sales) %>">
+            <a class="sidebar-menu-button" href="<%= dashboard_sales_path %>">
+              <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">attach_money</i>
+              <span class="sidebar-menu-text">Sales</span>
+            </a>
+          </li>
+          <li class="sidebar-menu-item <%= active_nav_markup(:dispatch) %>">
+            <a class="sidebar-menu-button" href="<%= dispatch_path %>">
+              <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">directions</i>
+              <span class="sidebar-menu-text">Dispatch</span>
+            </a>
+          </li>
+          <li class="sidebar-menu-item <%= active_nav_markup(:billing) %>">
+            <a class="sidebar-menu-button" href="<%= dashboard_billing_path %>">
+              <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">inbox</i>
+              <span class="sidebar-menu-text">Billing</span>
+              <%# <span class="badge badge-primary ml-auto">NEW</span> %>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-heading">Management</div>
+      <div class="sidebar-block p-0">
+        <ul class="sidebar-menu" id="components_menu">
+          <li class="sidebar-menu-item <%= active_nav_markup(:trucks) %>">
+            <a class="sidebar-menu-button" href="<%= dashboard_trucks_path %>">
+              <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">directions_bus</i>
+              <span class="sidebar-menu-text">Trucks</span>
+            </a>
+          </li>
+          <li class="sidebar-menu-item <%= active_nav_markup(:customers) %>">
+            <a class="sidebar-menu-button" href="<%= dashboard_customers_path %>">
+              <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">contacts</i>
+              <span class="sidebar-menu-text">Customers</span>
+            </a>
+          </li>
+          <li class="sidebar-menu-item <%= active_nav_markup(:materials) %>">
+            <a class="sidebar-menu-button" href="<%= dashboard_materials_path %>">
+              <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">list</i>
+              <span class="sidebar-menu-text">Materials</span>
+              <%# <span class="badge badge-primary ml-auto">NEW</span> %>
+            </a>
+          </li>
+          <li class="sidebar-menu-item <%= active_nav_markup(:locations) %>">
+            <a class="sidebar-menu-button" href="<%= dashboard_locations_path %>">
+              <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">map</i>
+              <span class="sidebar-menu-text">Locations</span>
+              <%# <span class="badge badge-primary ml-auto">NEW</span> %>
+            </a>
+          </li>
+          <li class="sidebar-menu-item <%= active_nav_markup(:users) %>">
+            <a class="sidebar-menu-button" href="<%= dashboard_users_path %>">
+              <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">person</i>
+              <span class="sidebar-menu-text">Users</span>
+              <%# <span class="badge badge-primary ml-auto">NEW</span> %>
+            </a>
+          </li>
+          <li class="sidebar-menu-item <%= active_nav_markup(:settings) %>">
+            <a class="sidebar-menu-button" href="<%= dashboard_settings_path %>">
+              <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">settings</i>
+              <span class="sidebar-menu-text">Settings</span>
+              <%# <span class="badge badge-primary ml-auto">NEW</span> %>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

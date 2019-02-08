@@ -3,15 +3,14 @@
 // $material-design-icons-font-path: '../fonts/material-icons/' !default;
 $material-design-icons-font-path: 'material-design-icons-iconfont/dist/fonts/' !default;
 
-$fa-font-path:                    'fontawesome-free/webfonts' !default;
+$fa-font-path:                    '@fortawesome/fontawesome-free/webfonts' !default;
 
-$body-bg:                           #FAFBFD !default;
+$body-bg:                           #F7F8F9 !default;
 $body-color:                        #112b4a !default;
-$secondary-body-color:              #8190A5 !default;
-$link-color:                        #5A97FF !default;
+$link-color:                        #0099EE !default;
 $text-muted:                        rgba(#374D67, .54) !default;
 
-$primary:                           #5A97F3 !default;
+$primary:                           #0099EE !default;
 $primary-dark:                      darken($primary, 10%) !default;
 $success:                           #48BA16 !default;
 $dark:                              #364C66 !default;
@@ -27,13 +26,13 @@ $light-gray:                        #ECEEF0 !default;
 
 $theme-colors: (
   "teal": #16BA71,
-  "purple": #5A97FF,
+  "purple": #5163C5,
   "dark-gray": $dark-gray,
   "light-gray": $light-gray,
   "muted-light": #DBDFE4,
 ) !default;
 
-$font-size-base:                    .85rem !default; // 15px
+$font-size-base:                    .9375rem !default; // 15px
 $font-family-base:                  'Source Sans Pro', sans-serif;
 
 $headings-font-family:              'Open Sans', monospace !default;
@@ -89,7 +88,7 @@ $input-focus-border-color:          $primary !default;
 $input-group-addon-bg:              white !default;
 $input-group-addon-color:           $dark-gray !default;
 
-$navbar-height:                     86px !default;
+$navbar-height:                     64px !default;
 $navbar-item-spacing:               1rem !default;
 $navbar-nav-link-padding-x:         .75rem !default;
 
@@ -188,4 +187,4 @@ $pagination-disabled-color:         rgba($pagination-color, .3) !default;
 @import 'sidebar-style-guide/sass/variables';
 
 // MDK (default)
-@import 'material-design-kit/variables';
+@import 'material-design-kit/src/variables';

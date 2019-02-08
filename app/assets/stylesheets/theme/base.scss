@@ -4,30 +4,30 @@
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
 // MDK
-@import 'material-design-kit/style';
-@import "material-design-icons-iconfont/dist/material-design-icons.scss";
+@import 'material-design-kit/src/style';
 // SIMPLEBAR (SCROLL)
-@import 'simplebar';
+@import 'simplebar/dist/simplebar';
 
 //** PLUGINS (NODE_MODULES)
-@import "flatpickr";
-@import "flatpickr-airbnb";
+@import "vendor-flatpickr";
+@import "vendor-flatpickr-airbnb";
 
-@import "daterangepicker";
-@import "jqvmap.min";
+@import "daterangepicker/daterangepicker";
+@import "jqvmap/dist/jqvmap.min";
 
-@import "toastr";
+@import "toastr/toastr";
+@import "toastr/toastr";
 
-@import "select2";
-@import "select2.min";
+@import "vendor-select2";
+@import "select2/dist/css/select2.min";
 
-@import "dragula.min";
-@import "fullcalendar.min";
+@import "dragula/dist/dragula.min";
+@import "fullcalendar/dist/fullcalendar.min";
 @import "fullcalendar";
 
-@import "fontawesome-free";
-@import "quill";
-@import "dropzone";
+@import "vendor-fontawesome-free";
+@import "vendor-quill";
+@import "vendor-dropzone";
 
 //** APP
 @import 'flexbox';
@@ -79,3 +79,19 @@
 @import 'stories';
 @import 'pricing';
 @import 'map';
+
+.select2-container .select2-selection--single {
+  height: inherit !important;
+}
+
+.select2-container--bootstrap4.select2-container--focus .select2-selection--multiple,
+.select2-container--bootstrap4 .select2-search--dropdown .select2-search__field,
+.select2-container--bootstrap4 .select2-selection--multiple,
+.select2-container .select2-selection--single {
+  padding: .35rem .75rem !important;
+}
+
+.select2-container--bootstrap4 .select2-selection--multiple .select2-selection__choice {
+  margin: 0 !important;
+  margin-right: 6px !important;
+}

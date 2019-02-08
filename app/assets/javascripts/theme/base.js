@@ -1,40 +1,48 @@
 //** CORE
+//= require jquery/dist/jquery.min.js
+//= require popper.js/dist/umd/popper.js
+//= require bootstrap/dist/js/bootstrap.min.js
 
-//= require simplebar.min.js
-//= require dom-factory.js
-//= require material-design-kit.js
-//= require jquery.mask.min.js
-//= require select2.min.js
+//= require simplebar/dist/simplebar.min.js
 
-//= require moment.min.js
-//= require moment-range.js
+//= require dom-factory/dist/dom-factory.js
+//= require material-design-kit/dist/material-design-kit.js
 
-//= require chart.min.js
-//= require flatpickr.min.js
+//** PLUGIN SCRIPTS (NODE_MODULES)
+//= require jquery-mask-plugin/dist/jquery.mask.min.js
+//= require select2/dist/js/select2.min.js
 
-//= require dropzone.js
+//= require moment/min/moment.min.js
+//= require moment-range/dist/moment-range.js
 
-//= require list.min.js
-//= require toastr.js
+//= require chart.js/dist/Chart.min.js
+//= require flatpickr/dist/flatpickr.min.js
 
-//= require dragula.min.js
+//= require jqvmap/dist/jquery.vmap.min.js
+//= require jqvmap/dist/maps/jquery.vmap.world.js
 
-//= require jquery-ui.min.js
-//= require fullcalendar.min.js
-
-//= require quill.min.js
-
-//=require daterangepicker.js
-
-
-//** MAPS
-//= require jquery.vmap.min.js
-//= require jquery.vmap.world.js
 //= require ./vector-maps/mall-map.js
 //= require ./vector-maps/gdp-data.js
 
 
+//= require dropzone/dist/dropzone.js
+
+//= require list.js/dist/list.min.js
+//= require toastr/toastr.js
+
+//= require dragula/dist/dragula.min.js
+
+//= require jquery-ui-dist/jquery-ui.min.js
+//= require fullcalendar/dist/fullcalendar.min.js
+
+//= require quill/dist/quill.min.js
+
+
+//=require daterangepicker/daterangepicker.js
+
+
 //** APP SETTINGS
+//= require ./application.js
 //= require ./settings.js
 
 //** PLUGIN WRAPPERS & INITS

@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>Haul Dashboard</title>
+    <title>Haul - Dashboard</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'dashboard', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'dashboard', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="<%= @body_class || 'layout-default' %>">
+  <body class="<%= @body_class || 'layout-default' %> <%= controller_name %> <%= action_name %>">
     <!-- Header Layout -->
     <div class="mdk-header-layout js-mdk-header-layout">
 
@@ -34,7 +33,7 @@
           </div>
           <!-- // END drawer-layout__content -->
 
-          <%= render 'dashboard/drawer_left' %>
+          <%= render 'shared/drawer_left' %>
         </div>
         <!-- // END drawer-layout -->
 

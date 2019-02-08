@@ -36,5 +36,16 @@ module ApplicationHelper
       markup || "active" 
     end
   end
+
+  def title(page_title)
+    content_for(:title) { page_title }
+  end
+
+  def show_action(action)
+    case action
+    when :add_truck
+      action_name == "index"
+    end
+  end
   
 end
