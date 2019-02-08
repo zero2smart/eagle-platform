@@ -6,24 +6,23 @@
 // MDK
 @import 'material-design-kit/src/style';
 // SIMPLEBAR (SCROLL)
-@import 'simplebar/dist/simplebar';
+@import 'simplebar';
 
 //** PLUGINS (NODE_MODULES)
 @import "vendor-flatpickr";
 @import "vendor-flatpickr-airbnb";
 
-@import "daterangepicker/daterangepicker";
-@import "jqvmap/dist/jqvmap.min";
+@import "daterangepicker";
+@import "jqvmap.min";
 
-@import "toastr/toastr";
-@import "toastr/toastr";
+@import "toastr";
 
 @import "vendor-select2";
-@import "select2/dist/css/select2.min";
+@import "select2.min";
 
-@import "dragula/dist/dragula.min";
-@import "fullcalendar/dist/fullcalendar.min";
-@import "fullcalendar";
+@import "dragula.min";
+@import "fullcalendar.min";
+@import "vendor-fullcalendar";
 
 @import "vendor-fontawesome-free";
 @import "vendor-quill";
@@ -66,7 +65,6 @@
 @import 'apps/chat';
 @import 'daterangepicker';
 @import 'toastr';
-@import 'fullcalendar';
 @import 'preloader';
 
 //** PAGES
