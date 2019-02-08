@@ -16,4 +16,4 @@
 //= require popper
 //= require bootstrap-sprockets
 
-//= require dispatch/base
+//= require_tree ./dispatch

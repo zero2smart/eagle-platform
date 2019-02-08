@@ -1,3 +1,5 @@
+require 'faker'
+
 class Dashboard::CustomersController < AuthenticatedController
 
   def index

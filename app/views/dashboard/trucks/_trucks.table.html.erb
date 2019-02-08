@@ -1,0 +1,49 @@
+<div class="table-responsive border-bottom" data-toggle="lists" data-lists-values='["js-lists-values-employee-name"]'>
+  
+  <%# <div class="search-form search-form--light m-3">
+    <input type="text" class="form-control search" placeholder="Search">
+    <button class="btn" type="button" role="button"><i class="material-icons">search</i></button>
+  </div>
+   %>
+  <table class="table mb-0 thead-border-top-0">
+    <thead>
+      <tr>
+        <th>Truck Number</th>
+        <th>Ownership</th>
+        <th>Status</th>
+        <th>Last Activity</th>
+        <th>All Time Earnings</th>
+        <th>Next Maintance</th>
+        <th> </th>
+      </tr>
+    </thead>
+    <tbody class="list" id="blah">
+      <% (0..20).each do |i| %>
+        <tr>
+          <td><strong><%= 100 + i %></strong></td>
+          <td><span class="badge badge-primary">EAGLE</span></td>
+          <td><span class="badge badge-success">ACTIVE</span></td>
+          <td><small class="text-muted">3 days ago</small></td>
+          <td>&dollar;12,402</td>
+          <td>03/23/2019</td>
+          <td class="text-right"><a href="" class="text-muted"><i class="material-icons">more_vert</i></a></td>
+        </tr>
+      <% end %>
+
+      <% (21..100).each do |i| %>
+        <tr>
+          <td><strong><%= 100 + i %></strong></td>
+          <td><span class="badge badge-light">PRIVATE</span></td>
+          <td><span class="badge badge-warning">INACTIVE</span></td>
+          <td><small class="text-muted">3 days ago</small></td>
+          <td>&dollar;12,402</td>
+          <td>03/23/2019</td>
+          <td class="text-right"><a href="" class="text-muted"><i class="material-icons">more_vert</i></a></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+

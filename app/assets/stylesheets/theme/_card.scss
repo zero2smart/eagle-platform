@@ -1,8 +1,7 @@
 .card {
   
-  // box-shadow: 0 10px 25px 0 rgba(50,50,93,0.07), 0 5px 15px 0 rgba(0,0,0,0.07);
+  box-shadow: 0 10px 25px 0 rgba(50,50,93,0.07), 0 5px 15px 0 rgba(0,0,0,0.07);
   border: none;
-  border: 1px solid #CDD8DD;
   
   margin-bottom: $grid-gutter-width / 2;
   
@@ -45,8 +44,8 @@
   background-color: #F7F8F9;
 }
 .card-header__title {
-  font-size: 1.2rem;
-  font-weight: 300;
+  font-size: 1rem;
+  font-weight: 600;
   font-family: $font-family-base;
   letter-spacing: 0;
   color: $headings-color;
