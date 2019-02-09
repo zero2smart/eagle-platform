@@ -7,12 +7,12 @@
         <th>Phone</th>
         <th>Materials</th>
         <th></th>
-        </tr
+      </tr>
     </thead>
     <tbody class="list" id="blah">
       <% (0..3).each do |i| %>
         <tr>
-          <td><strong><%= ['Saint Johns Quarry', 'White Rock Quarry', 'Star Quarries','Haul Quarry'].sample %></strong></td>
+          <td><strong><a href="#"><%= ['Saint Johns Quarry', 'White Rock Quarry', 'Star Quarries','Haul Quarry'].sample %></a></strong></td>
           <td><a href="#"><%= Faker::Internet.email %></a></td>
           <td><%= Faker::PhoneNumber.cell_phone %></td>
           <td><span class="badge badge-light"><%= rand 1..8 %></span></td>
@@ -29,6 +29,3 @@
     </tbody>
   </table>
 </div>
-
-
-

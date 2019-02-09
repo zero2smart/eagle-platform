@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :trucks, controller: 'dashboard/trucks'
     resources :customers, controller: 'dashboard/customers'
     resources :materials, controller: 'dashboard/materials'
-    resources :locations, controller: 'dashboard/locations'
+    resources :suppliers, controller: 'dashboard/suppliers'
 
     resources :settings, only: [:index], controller: 'dashboard/settings'
     resources :users, only: [:index], controller: 'dashboard/users'
