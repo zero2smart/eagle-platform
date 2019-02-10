@@ -1,4 +1,4 @@
-<%- title 'Location Management' %>
+<%- title 'Supplier Management' %>
 
 <%= render 'page_header' %>
 
@@ -7,7 +7,7 @@
     <div class="col-lg-8 col-md-12">
       <div class="card">
         <div class="card-header card-header-large bg-white">
-          <h4 class="card-header__title">Add a New Quarry</h4>
+          <h4 class="card-header__title">Add a Supplier</h4>
         </div>
         <form>
           <div class="card-body card-form__body">
@@ -91,21 +91,6 @@
               <input type="input" class="form-control" id="quarryPhone" placeholder="(000) 000-0000)" data-mask="(000) 000-0000"
                 autocomplete="off" maxlength="14" data-com.agilebits.onepassword.user-edited="yes">
             </div>
-
-            <div class="form-group">
-              <label for="quarryMaterials">Multiple</label>
-              <select 
-                id="quarryMaterials" 
-                data-toggle="select" 
-                multiple
-                class="form-control">
-                <option selected="">Ruby</option>
-                <option selected="">Emerald</option>
-                <option>Diamonds</option>
-                <option>Sand</option>
-              </select>
-            </div>
-
           </div>
           <div class="card-footer">
             <button type="submit" class="btn btn-primary">Submit</button>
