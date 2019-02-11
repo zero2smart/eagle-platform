@@ -52,5 +52,17 @@ module ApplicationHelper
     # TODO
     true
   end
+
+  def pagination_prev_markup
+    html = content_tag(:span, "chevron_left", {class: "material-icons", "aria-hidden": "true"})
+    html << content_tag(:span, "Prev", class: "sr-only")
+    html
+  end
+
+  def pagination_next_markup
+    html = content_tag(:span, "Next", class: "sr-only")
+    html << content_tag(:span, "chevron_right", {class: "material-icons", "aria-hidden": "true"})
+    html
+  end
   
 end

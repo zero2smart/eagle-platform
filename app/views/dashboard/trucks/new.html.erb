@@ -9,35 +9,7 @@
         <div class="card-header card-header-large bg-white">
           <h4 class="card-header__title">Register a Trucks</h4>
         </div>
-        <form>
-          <div class="card-body card-form__body">
-            <div class="form-group">
-              <label for="truckNumber">Truck Number</label>
-              <input type="input" class="form-control" id="truckNumber" placeholder="Enter a truck #">
-            </div>
-
-            <div class="form-group">
-              <label for="ownership">Ownership</label>
-              <select class="form-control" id="ownership">
-                <option>-- Select --</option>
-                <option>Eagle</option>
-                <option>Private</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="truckStatus">Status</label><br>
-              <div class="custom-control custom-checkbox-toggle custom-control-inline mr-1">
-                <input checked="" type="checkbox" id="truckStatus" class="custom-control-input">
-                <label class="custom-control-label" for="truckStatus">Active</label>
-              </div>
-              <label for="truckStatus" class="mb-0">Active</label>
-            </div>
-          </div>
-          <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-        </form>
+        <%= render 'form' %>
       </div>
     </div>
   </div>

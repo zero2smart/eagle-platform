@@ -2,9 +2,6 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 
-Vendor.destroy_all
-User.destroy_all
-
 haul_admin = User.find_or_initialize_by(email: "admin@haulhq.com")
 haul_admin.name = "Haul Admin"
 haul_admin.password = "password1"
@@ -21,6 +18,7 @@ vendor.zip_code = Faker::Address.zip_code
 vendor.phone_number = Faker::PhoneNumber.phone_number
 vendor.save!
 
+vendor.users.destroy_all
 [:manager, :sales_manager, :sales, :dispatch].each do |role|
 
   u = vendor.users.find_or_initialize_by(email: "#{role}@demo.com")
@@ -35,3 +33,29 @@ end
 
 puts "Users:"
 puts vendor.users.map{|u| "#{u.email} - #{u.name}\n"}
+
+
+vendor.trucks.destroy_all
+(100..120).each do |number|
+  vendor.trucks.create! do |t|
+    t.number = number
+    t.is_owned = true
+    t.last_maintained_on = rand(Date.today-90.days..Date.today)
+    t.maintenance_period = [3,6,9,12].sample
+  end
+end
+puts "#{vendor.trucks.is_owned.count} Demo Trucks"
+
+(200..280).each do |number|
+  vendor.trucks.create! do |t|
+    t.number = number
+    t.is_owned = false
+    t.last_maintained_on = rand(Date.today-90.days..Date.today)
+    t.maintenance_period = [3,6,9,12].sample
+  end
+end
+puts "#{vendor.trucks.is_private.count} Private Trucks"
+
+
+
+

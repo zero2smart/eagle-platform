@@ -50,6 +50,7 @@ class Vendor < ApplicationRecord
   # ASSOCIATIONS
   # ######################
   has_many :users
+  has_many :trucks
   # ######################
 
 
@@ -77,6 +78,10 @@ class Vendor < ApplicationRecord
   before_save :delete_logo, if: ->{ remove_logo == '1' }
   # ######################
 
+
+  def short_name
+    name.split(' ')[0]
+  end
   
   private
     def delete_logo

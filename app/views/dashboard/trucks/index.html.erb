@@ -10,70 +10,21 @@
           <h4 class="card-header__title">Registered Trucks</h4>
         </div>
         <div class="card-header">
-          <form class="form-inline">
+          <form class="form-inline" data-filter="true">
             <label class="mr-sm-2" for="inlineFormFilterBy">Filter by:</label>
-            <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormFilterBy" placeholder="Truck Number">
+            <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormFilterBy" placeholder="Truck Number" name="truck_number">
 
             <label class="sr-only" for="inlineFormRole">Role</label>
-            <select id="inlineFormRole" class="custom-select mb-2 mr-sm-2 mb-sm-0">
-              <option value="All Trucks">All </option>
-              <option value="Private">Private</option>
-              <option value="Independents ">Independents</option>
+            <select id="inlineFormRole" class="custom-select mb-2 mr-sm-2 mb-sm-0" name="truck_ownership" onChange="$(this).parent().submit()">
+              <option value="all" <%= 'selected' if params[:truck_ownership] != 'owned' && params[:truck_ownership] != 'private' %>>All </option>
+              <option value="owned"<%= 'selected' if params[:truck_ownership] == 'owned'%>><%= current_vendor.short_name %></option>
+              <option value="private"<%= 'selected' if params[:truck_ownership] == 'private' %>>Private</option>
             </select>
 
           </form>
         </div>
         <%= render 'trucks.table' %>
-                <div class="card-footer text-center">
-          <div class="d-inline-block">
-            <ul class="pagination mb-0">
-              <li class="page-item disabled">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true" class="material-icons">first_page</span>
-                  <span class="sr-only">First</span>
-                </a>
-              </li>
-              <li class="page-item disabled">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true" class="material-icons">chevron_left</span>
-                  <span class="sr-only">Prev</span>
-                </a>
-              </li>
-              <li class="page-item active">
-                <a class="page-link" href="#" aria-label="1">
-                  <span>1</span>
-                </a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="2">
-                  <span>2</span>
-                </a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="3">
-                  <span>3</span>
-                </a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="4">
-                  <span>4</span>
-                </a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span class="sr-only">Next</span>
-                  <span aria-hidden="true" class="material-icons">chevron_right</span>
-                </a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span class="sr-only">Last</span>
-                  <span aria-hidden="true" class="material-icons">last_page</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+        
       </div>
     </div>
   </div>

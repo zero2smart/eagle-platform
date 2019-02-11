@@ -18,32 +18,40 @@
       </tr>
     </thead>
     <tbody class="list" id="blah">
-      <% (0..20).each do |i| %>
+      <% @trucks.each do |truck| %>
         <tr>
-          <td><strong><%= 100 + i %></strong></td>
-          <td><span class="badge badge-primary">EAGLE</span></td>
-          <td><span class="badge badge-success">ACTIVE</span></td>
-          <td><small class="text-muted">3 days ago</small></td>
-          <td>&dollar;12,402</td>
-          <td>03/23/2019</td>
-          <td class="text-right"><a href="" class="text-muted"><i class="material-icons">more_vert</i></a></td>
+          <td><strong><%= truck.number %></strong></td>
+          <td>
+            <% if truck.is_owned? %>
+              <span class="badge badge-primary"><%= current_vendor.short_name.upcase %></span>
+            <% else %>  
+              <span class="badge badge-light">PRIVATE</span>
+            <% end %>
+          </td>
+          <td>
+            <% if truck.is_active? %>
+              <span class="badge badge-success">ACTIVE</span>
+            <% else %>  
+              <span class="badge badge-warning">INACTIVE</span>
+            <% end %>
+          </td>
+          <td><small class="text-muted"><%= f_time_ago(truck.last_activity_date) %></small></td>
+          <td><%= f_money(truck.all_time_earnings) %></td>
+          <td><%= f_date(truck.next_maintenance_date) %></td>
+          <td class="text-right">
+            <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted"><i class="material-icons">more_vert</i></a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <%= link_to 'Edit Truck', edit_dashboard_truck_path(truck), class: "dropdown-item" %>
+              <div class="dropdown-divider"></div>
+              <%= link_to 'Delete Truck', dashboard_truck_path(truck), method: :delete, class: "dropdown-item" %>
+            </div>
+          </td>
         </tr>
       <% end %>
 
-      <% (21..100).each do |i| %>
-        <tr>
-          <td><strong><%= 100 + i %></strong></td>
-          <td><span class="badge badge-light">PRIVATE</span></td>
-          <td><span class="badge badge-warning">INACTIVE</span></td>
-          <td><small class="text-muted">3 days ago</small></td>
-          <td>&dollar;12,402</td>
-          <td>03/23/2019</td>
-          <td class="text-right"><a href="" class="text-muted"><i class="material-icons">more_vert</i></a></td>
-        </tr>
-      <% end %>
     </tbody>
   </table>
 </div>
 
-
+<%= render 'shared/pagination', collection: @trucks %>
 

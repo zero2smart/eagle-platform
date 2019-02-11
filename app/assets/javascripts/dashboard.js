@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require theme/base
-
+//= require_tree ./global/
 
 $(document).ready(function() {
   $('#matPrice').editable({

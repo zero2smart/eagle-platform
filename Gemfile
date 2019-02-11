@@ -70,6 +70,7 @@ gem 'rollbar'
 gem 'simple_form'
 gem 'workflow'
 gem 'will_paginate', '~> 3.1', '>= 3.1.5'
+gem 'will_paginate-bootstrap4'
 gem 'pg_search', '~> 2.0', '>= 2.0.1'
 
 gem 'rack-attack'

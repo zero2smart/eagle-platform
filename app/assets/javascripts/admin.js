@@ -11,3 +11,4 @@
 // about supported directives.
 //
 //= require theme/base
+//= require_tree ./global/
