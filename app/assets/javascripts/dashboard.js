@@ -12,39 +12,4 @@
 //
 //= require theme/base
 //= require_tree ./global/
-
-$(document).ready(function() {
-  $('#matPrice').editable({
-    mode: 'inline',
-    type: 'text',
-    pk: 1,
-    url: '/post',
-    title: 'Enter username'
-  });
-
-  $('#matStatus').editable({
-    mode: 'inline',
-    type: 'select',
-    pk: 1,
-    url: '/post',
-    value: 1,
-    title: 'Enter username',
-    source: [
-      {value: 1, text: 'Active'},
-      {value: 2, text: 'Inactive'},
-    ]
-  });
-
-  $('#matUnit').editable({
-    mode: 'inline',
-    type: 'select',
-    pk: 1,
-    url: '/post',
-    value: 1,
-    title: 'Enter username',
-    source: [
-      {value: 1, text: 'Yard'},
-      {value: 2, text: 'Ton'},
-    ]
-  });
-});
+//= require_tree ./dashboard/

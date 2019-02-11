@@ -1,10 +1,13 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
-if Rails.env.development?
+
+if true
   Vendor.destroy_all
   User.destroy_all
   Truck.destroy_all
+  Supplier.destroy_all
+  Material.destroy_all
 end
 
 haul_admin = User.find_or_initialize_by(email: "admin@haulhq.com")
@@ -20,10 +23,9 @@ vendor.address = Faker::Address.street_address
 vendor.city = Faker::Address.city
 vendor.state = Faker::Address.state_abbr
 vendor.zip_code = Faker::Address.zip_code
-vendor.phone_number = Faker::PhoneNumber.phone_number
+vendor.phone_number = "3055551212"
 vendor.save!
 
-vendor.users.destroy_all
 [:manager, :sales_manager, :sales, :dispatch].each do |role|
 
   u = vendor.users.find_or_initialize_by(email: "#{role}@demo.com")
@@ -40,7 +42,6 @@ puts "Users:"
 puts vendor.users.map{|u| "#{u.email} - #{u.name}\n"}
 
 
-vendor.trucks.destroy_all
 (100..120).each do |number|
   vendor.trucks.create! do |t|
     t.number = number
@@ -61,6 +62,25 @@ puts "#{vendor.trucks.is_owned.count} Demo Trucks"
 end
 puts "#{vendor.trucks.is_private.count} Private Trucks"
 
+["White Rock", "Vulcan Materials", "SDI"].each do |name|
+  supplier = vendor.suppliers.create! do |s|
+    s.name = name
+    s.email = Faker::Internet.email
+    s.address = "18300 NW 122nd Ave"
+    s.city = "Hialeah"
+    s.state = "FL"
+    s.zip_code = "33018"
+    s.phone_number = "3055551212"
+  end
+
+  ["rock", "sand"].each do |material|
+    supplier.materials.create! do |m|
+      m.name = material
+      m.price = rand(1.0..4.0)
+      m.unit = Material.units.keys.sample
+    end
+  end
+end
 
 
 

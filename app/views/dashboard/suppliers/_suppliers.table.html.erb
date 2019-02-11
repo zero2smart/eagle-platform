@@ -10,12 +10,12 @@
       </tr>
     </thead>
     <tbody class="list" id="blah">
-      <% ["White Rock", "Vulcan Materials", "SDI"].each do |name| %>
+      <% @suppliers.each do |supplier| %>
         <tr>
-          <td><strong><%= link_to name.to_s, dashboard_supplier_path(1)  %></strong></td>
-          <td><%= Faker::Address.state %></td>
-          <td><%= Faker::Address.city %></td>
-          <td><%= Faker::PhoneNumber.phone_number %></td>
+          <td><strong><%= link_to supplier.name, dashboard_supplier_path(supplier)  %></strong></td>
+          <td><%= supplier.state %></td>
+          <td><%= supplier.city %></td>
+          <td><%= f_phone supplier.phone_number %></td>
           <td></td>
           <td class="text-right dropdown">
             <a href="" class="text-muted dropdown-toggle" data-toggle="dropdown" data-caret="false"><i class="material-icons">more_vert</i></a>

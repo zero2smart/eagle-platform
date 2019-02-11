@@ -1,23 +1,23 @@
 # == Schema Information
 #
-# Table name: vendors
+# Table name: suppliers
 #
 #  id           :bigint(8)        not null, primary key
-#  uuid         :uuid             not null
+#  vendor_id    :integer
 #  name         :string
+#  email        :string
 #  address      :string
 #  address2     :string
 #  city         :string
 #  state        :string
 #  zip_code     :string
 #  phone_number :string
+#  is_active    :boolean          default(TRUE)
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
 
-class Vendor < ApplicationRecord
-  attr_accessor :remove_logo
-
+class Supplier < ApplicationRecord
   # ######################
   # CONSTANTS
   # ######################
@@ -28,7 +28,7 @@ class Vendor < ApplicationRecord
   # ######################
   # SCOPES
   # ######################
-
+  scope :is_active, -> { where(is_active: true) }
   # ######################
 
   
@@ -42,17 +42,15 @@ class Vendor < ApplicationRecord
   # ######################
   # PLUGINS / MODULES
   # ######################
-  has_one_attached :logo
+
   # ######################
 
 
   # ######################
   # ASSOCIATIONS
   # ######################
-  has_many :users, dependent: :destroy
-  has_many :trucks, dependent: :destroy
-  has_many :suppliers, dependent: :destroy
-  has_many :materials, through: :suppliers
+  belongs_to :vendor
+  has_many :materials, dependent: :destroy
   # ######################
 
 
@@ -70,23 +68,17 @@ class Vendor < ApplicationRecord
   # ######################
   # ENUMERATORS
   # ######################
-  enum role: [:haul_admin, :manager, :sales_manager, :sales, :dispatch, :driver, :customer]
+
   # ######################
 
 
   # ######################
   # CALLBACKS
   # ######################
-  before_save :delete_logo, if: ->{ remove_logo == '1' }
+
   # ######################
 
 
-  def short_name
-    name.split(' ')[0]
-  end
-  
   private
-    def delete_logo
-      self.logo.purge
-    end
+
 end
