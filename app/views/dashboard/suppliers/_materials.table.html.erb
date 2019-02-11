@@ -9,11 +9,11 @@
       </tr>
     </thead>
     <tbody class="list" id="blah">
-      <% (0..30).each do |i| %>
+      <% (0..10).each do |i| %>
         <tr>
           <td><strong><%= ["Diamond", "Ruby", "Ruby", "Emerald", "Unicorn Horn", "Sand", "Granite" ].sample %></strong></td>
           <td><%= ["$34.99", "$12.23", "$23.43", "11.13", "$324.34"].sample %></td>
-          <td><span class="badge badge-<%= ['secondary', 'light'].sample %>"><%= ["Yard", "Ton"].sample %></span></td>
+          <td><span class="badge badge-light"><%= ["Yard", "Ton"].sample %></span></td>
           <td></td>
           <td class="text-right dropdown">
             <a href="" class="text-muted dropdown-toggle" data-toggle="dropdown" data-caret="false"><i class="material-icons">more_vert</i></a>

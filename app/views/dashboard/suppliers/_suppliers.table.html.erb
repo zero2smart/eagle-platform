@@ -2,20 +2,20 @@
   <table class="table mb-0 thead-border-top-0">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>E-mail</th>
+        <th>Supplier</th>
+        <th>State</th>
+        <th>City</th>
         <th>Phone</th>
-        <th>Materials</th>
         <th></th>
       </tr>
     </thead>
     <tbody class="list" id="blah">
-      <% (0..3).each do |i| %>
+      <% ["White Rock", "Vulcan Materials", "SDI"].each do |name| %>
         <tr>
-          <td><strong><a href="suppliers/1"><%= ['Saint Johns Quarry', 'White Rock Quarry', 'Star Quarries','Haul Quarry'].sample %></a></strong></td>
-          <td><a href="#"><%= Faker::Internet.email %></a></td>
-          <td><%= Faker::PhoneNumber.cell_phone %></td>
-          <td><span class="badge badge-light"><%= rand 1..8 %></span></td>
+          <td><strong><%= link_to name.to_s, dashboard_supplier_path(1)  %></strong></td>
+          <td><%= Faker::Address.state %></td>
+          <td><%= Faker::Address.city %></td>
+          <td><%= Faker::PhoneNumber.phone_number %></td>
           <td></td>
           <td class="text-right dropdown">
             <a href="" class="text-muted dropdown-toggle" data-toggle="dropdown" data-caret="false"><i class="material-icons">more_vert</i></a>
