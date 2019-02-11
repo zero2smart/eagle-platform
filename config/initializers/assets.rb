@@ -14,4 +14,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( application_footer.js )
 Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|woff2|ttf)$/
 Rails.application.config.assets.precompile += %w( *.es6 )
-Rails.application.config.assets.precompile += %w( theme.js theme.css dashboard.js dashboard.css dispatch.js dispatch.css )
+Rails.application.config.assets.precompile += %w( theme.js theme.css dashboard.js dashboard.css admin.js admin.css dispatch.js dispatch.css )

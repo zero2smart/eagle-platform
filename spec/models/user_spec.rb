@@ -15,6 +15,8 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  auth_token             :string
+#  vendor_id              :integer
+#  role                   :integer
 #
 
 require 'rails_helper'

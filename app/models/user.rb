@@ -15,10 +15,12 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  auth_token             :string
+#  vendor_id              :integer
+#  role                   :integer
 #
 
 class User < ApplicationRecord
-  # attr_accessor :remove_avatar
+  attr_accessor :remove_avatar
 
   # ######################
   # CONSTANTS
@@ -50,6 +52,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          #, :confirmable
 
+  has_one_attached :avatar
   # has_attached_file :avatar, styles: {
   #   thumb: ['55x55#', :png],
   #   medium: ['150x82>', :png],
@@ -63,7 +66,7 @@ class User < ApplicationRecord
   # ######################
   # ASSOCIATIONS
   # ######################
-  # belongs_to :vendor, optional: true
+  belongs_to :vendor, optional: true
   # ######################
 
 
@@ -71,7 +74,7 @@ class User < ApplicationRecord
   # VALIDATIONS
   # ######################
   validates :name, presence: true
-  # validates :vendor_id, presence: true, unless: Proc.new { |u| u.isle_admin? }
+  validates :vendor_id, presence: true, if: Proc.new { |u| u.requires_vendor? }
 
   # validates :phone_number, presence: true
   # phony_normalize :phone_number, default_country_code: 'US'
@@ -82,7 +85,7 @@ class User < ApplicationRecord
   # ######################
   # ENUMERATORS
   # ######################
-  # enum role: [:isle_admin, :sales, :admin]
+  enum role: [:haul_admin, :manager, :sales_manager, :sales, :dispatch] # TODO :driver, :customer
   # ######################
 
 
@@ -90,7 +93,7 @@ class User < ApplicationRecord
   # CALLBACKS
   # ######################
   before_save :ensure_auth_token
-  # before_save :delete_avatar, if: ->{ remove_avatar == '1' && !avatar_updated_at_changed? }
+  before_save :delete_avatar, if: ->{ remove_avatar == '1' }
   # ######################
 
   def short_name
@@ -98,7 +101,12 @@ class User < ApplicationRecord
     "#{names[0]} #{names[1].first}."
   end
   
+  def requires_vendor?
+    !self.haul_admin? # TODO || self.driver? || self.customer?
+  end
+
   private
+
     def generate_auth_token
       loop do
         token = Devise.friendly_token
@@ -108,6 +116,10 @@ class User < ApplicationRecord
     
     def ensure_auth_token
       self.auth_token = generate_auth_token if self.auth_token.blank?
+    end
+
+    def delete_avatar
+      self.avatar.purge
     end
   
 end

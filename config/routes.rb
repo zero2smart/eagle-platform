@@ -24,6 +24,15 @@ Rails.application.routes.draw do
       get '', action: :index, as: ''
     end
   end
+
+  get 'admin/dashboard' => 'admin#dashboard', as: :admin_dashboard
+  resource :admin, only:[:index], controller: :admin do
+    get '', action: :dashboard
+
+    resources :vendors, controller: 'admin/vendors'
+    resources :settings, only: [:index], controller: 'admin/settings'
+    
+  end
   
   resource :dispatch, only: [:index], controller: 'dispatch' do
     get '', action: :index, as: ''

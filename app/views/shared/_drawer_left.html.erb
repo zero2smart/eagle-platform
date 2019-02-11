@@ -5,7 +5,7 @@
         <a href="#" class="flex d-flex align-items-center text-body text-underline-0">
           <span class="flex d-flex flex-column">
             <strong><%#= current_user.name %></strong>
-            <small class="text-muted text-uppercase">Account Manager</small>
+            <small class="text-muted text-uppercase"><%= current_user.role.titleize %></small>
           </span>
         </a>
         <div class="dropdown ml-auto">
