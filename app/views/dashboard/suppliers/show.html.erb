@@ -1,4 +1,4 @@
-<%- title 'Quarry Name' %>
+<%- title 'White Rock Quarries' %>
 
 <%= render 'page_header' %>
 
@@ -8,7 +8,7 @@
       <div class="card">
         <div class="card-header card-header-large bg-white d-flex align-items-center">
           <h4 class="card-header__title flex m-0">Information</h4>
-          <%= link_to '<i class="material-icons mr-1">edit</i> Edit'.html_safe, edit_dashboard_supplier_path(1), class: "btn btn-link p-0" %>
+          <%= link_to '<i class="material-icons mr-1">edit</i>'.html_safe, edit_dashboard_supplier_path(1), class: "btn btn-primary p-0 pl-1" %>
         </div>
         <div class="card-body">
           <div class="row">
@@ -42,11 +42,20 @@
   <div class="row">
     <div class="col-lg">
       <div class="card">
-        <div class="card-header card-header-large bg-white ">
+        <div class="card-header card-header-large bg-white d-flex align-items-center">
           <h4 class="card-header__title flex m-0">Materials</h4>
+          <%= link_to '<i class="material-icons mr-1">add</i>'.html_safe, edit_dashboard_supplier_path(1), class: "btn btn-primary p-0 pl-1" %>
         </div>
         <%= render 'materials.table' %>
       </div>
     </div>
   </div>
 </div>
+
+<% content_for :header_scripts do %>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+<% end %>
+
+<% content_for :footer_scripts do %>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+<% end %>

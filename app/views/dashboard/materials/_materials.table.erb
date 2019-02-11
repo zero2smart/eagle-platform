@@ -3,8 +3,7 @@
     <thead>
       <tr>
         <th>Material Name</th>
-        <th>Price</th>
-        <th>Unit</th>
+        <th>Quarry</th>
         <th></th>
       </tr>
     </thead>
@@ -12,8 +11,7 @@
       <% (0..30).each do |i| %>
         <tr>
           <td><strong><%= ["Diamond", "Ruby", "Ruby", "Emerald", "Unicorn Horn", "Sand", "Granite" ].sample %></strong></td>
-          <td><%= ["$34.99", "$12.23", "$23.43", "11.13", "$324.34"].sample %></td>
-          <td><span class="badge badge-<%= ['secondary', 'light'].sample %>"><%= ["Yard", "Ton"].sample %></span></td>
+          <td><%= link_to ["White Rock", "Vulcan Materials", "SDI"].sample, dashboard_supplier_path(1) %></td>
           <td></td>
           <td class="text-right dropdown">
             <a href="" class="text-muted dropdown-toggle" data-toggle="dropdown" data-caret="false"><i class="material-icons">more_vert</i></a>

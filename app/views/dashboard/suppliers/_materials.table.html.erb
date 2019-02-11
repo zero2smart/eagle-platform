@@ -5,25 +5,23 @@
         <th>Material Name</th>
         <th>Price</th>
         <th>Unit</th>
+        <th>Status</th>
         <th></th>
       </tr>
     </thead>
     <tbody class="list" id="blah">
-      <% (0..10).each do |i| %>
         <tr>
           <td><strong><%= ["Diamond", "Ruby", "Ruby", "Emerald", "Unicorn Horn", "Sand", "Granite" ].sample %></strong></td>
-          <td><%= ["$34.99", "$12.23", "$23.43", "11.13", "$324.34"].sample %></td>
-          <td><span class="badge badge-light"><%= ["Yard", "Ton"].sample %></span></td>
-          <td></td>
+          <td><a href="#" id="matPrice">$23.54</a></td> 
+          <td><a href="#" id="matUnit">Yard</a></td> 
+          <td><a href="#" id="matStatus">Available</a></td> 
           <td class="text-right dropdown">
             <a href="" class="text-muted dropdown-toggle" data-toggle="dropdown" data-caret="false"><i class="material-icons">more_vert</i></a>
             <div class="dropdown-menu dropdown-menu-right">
-              <a class="dropdown-item" href="#">Edit</a>
               <a class="dropdown-item" href="#">Delete</a>
             </div>
           </td>
         </tr>
-      <% end %>
     </tbody>
   </table>
 </div>
