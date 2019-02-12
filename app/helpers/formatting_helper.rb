@@ -9,7 +9,8 @@ module FormattingHelper
   end
 
   def f_money(amount)
-    amount && "$#{number_with_delimiter(amount, :separator => ',')}"
+    return '' if amount.blank?
+    amount && "$#{number_with_precision(amount, separator: '.', precision: 2, delimiter: ',')}"
   end
 
   def f_phone(number)

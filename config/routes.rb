@@ -15,7 +15,9 @@ Rails.application.routes.draw do
     resources :trucks, controller: 'dashboard/trucks'
     resources :customers, controller: 'dashboard/customers'
     resources :materials, controller: 'dashboard/materials'
-    resources :suppliers, controller: 'dashboard/suppliers'
+    resources :suppliers, controller: 'dashboard/suppliers' do
+      resources :materials, except: [:index, :show], controller: 'dashboard/suppliers/materials'
+    end
     resources :proposals, controller: 'dashboard/proposals' do
       resources :quotes, except: [:index], controller: 'dashboard/proposals/quotes'
     end

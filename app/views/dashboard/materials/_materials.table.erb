@@ -8,10 +8,12 @@
       </tr>
     </thead>
     <tbody class="list" id="blah">
-      <% (0..30).each do |i| %>
+      <% @material_types.each do |material_type| %>
         <tr>
-          <td><strong><%= ["Diamond", "Ruby", "Ruby", "Emerald", "Unicorn Horn", "Sand", "Granite" ].sample %></strong></td>
-          <td><%= link_to ["White Rock", "Vulcan Materials", "SDI"].sample, dashboard_supplier_path(1) %></td>
+          <td><strong><%= material_type.name.capitalize %></strong></td>
+          <td>
+            <%= material_type.suppliers.map{|s| link_to(s.name, dashboard_supplier_path(s)) }.join(', ').html_safe %>
+          </td>
           <td></td>
           <td class="text-right dropdown">
             <a href="" class="text-muted dropdown-toggle" data-toggle="dropdown" data-caret="false"><i class="material-icons">more_vert</i></a>
@@ -25,3 +27,4 @@
     </tbody>
   </table>
 </div>
+<%= render 'shared/pagination', collection: @material_types %>

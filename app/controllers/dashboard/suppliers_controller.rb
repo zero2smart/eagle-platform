@@ -7,7 +7,7 @@ class Dashboard::SuppliersController < AuthenticatedController
   end
 
   def show
-    
+    @materials = @supplier.materials.includes(:material_type).order('material_types.name').paginate(paginate_params)
   end
   
   def new
