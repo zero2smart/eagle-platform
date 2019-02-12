@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter, Redirect } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -44,7 +45,7 @@ class JobItem extends Component {
   }
 
   onClickAddress() {
-      this.props.history.push('/');
+    window.location.href = "http://www.w3schools.com";
   }
 
   setJobToComplete() {
@@ -282,4 +283,4 @@ const mapDispatchToProps = dispatch => ({
   removeTruckFromList: (job_id, number) => dispatch(removeTruckFromListAction({ job_id: job_id, number: number }))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SortableElement(JobItem));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(SortableElement(JobItem)));

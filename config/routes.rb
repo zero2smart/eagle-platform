@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   mount API::Base => '/'
   mount GrapeSwaggerRails::Engine => '/swagger'
 
@@ -35,12 +35,12 @@ Rails.application.routes.draw do
 
     resources :vendors, controller: 'admin/vendors'
     resources :settings, only: [:index], controller: 'admin/settings'
-    
+
   end
-  
+
   resource :dispatch, only: [:index], controller: 'dispatch' do
     get '', action: :index, as: ''
   end
-  
+
   get 'theme/(:page)' => 'theme#show', as: 'theme'
 end

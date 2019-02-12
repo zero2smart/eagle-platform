@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { hashHistory } from 'react-router';
 
 // This will be in components
 // import App from './App';
@@ -21,9 +22,16 @@ import DispatchContainer from '../containers/DispatchContainer';
 //     <DispatchContainer />
 //   </Provider>
 // );
+
+
 const DispatchApp = (props) => (
   <Provider store={configureStore}>
-    <DispatchContainer />
+    <BrowserRouter basename={'/dispatch'}>
+      <Switch>
+        <Route path='/' exact component={DispatchContainer} />
+        <Route path='/ss' component={DispatchContainer} />
+      </Switch>
+    </BrowserRouter>
   </Provider>
 );
 
