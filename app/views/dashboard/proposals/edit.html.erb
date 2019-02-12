@@ -1,6 +1,6 @@
 <%- title 'Supplier Management' %>
 
-<%= render 'dashboard/page_header' %>
+<%= render 'page_header' %>
 
 <div class="container-fluid page__container">
   <div class="row">
@@ -13,17 +13,17 @@
           <div class="card-body card-form__body">
             <div class="form-group">
               <label for="quarryName">Quarry Name</label>
-              <input type="input" class="form-control" id="quarryName" placeholder="">
+              <input type="input" class="form-control" id="quarryName" placeholder="" value="White Rock Quarries">
             </div>
 
             <div class="form-group">
               <label for="quarryEmail">Email</label>
-              <input type="input" class="form-control" id="quarryName" placeholder="">
+              <input type="input" class="form-control" id="quarryName" placeholder="" value="info@whiterockquarries.com">
             </div>
 
             <div class="form-group">
               <label for="quarryAddressLine1">Address Line 1:</label>
-              <input type="input" class="form-control" id="quarryAddressLine1" placeholder="">
+              <input type="input" class="form-control" id="quarryAddressLine1" placeholder="" value="18300 NW 122nd Ave">
             </div>
             <div class="form-group">
               <label for="quarryAddressLine2">Address Line 2:</label>
@@ -31,12 +31,12 @@
             </div>
             <div class="form-group">
               <label for="quarryAddressCity">City</label>
-              <input type="input" class="form-control" id="quarryAddressCity" placeholder="">
+              <input type="input" class="form-control" id="quarryAddressCity" placeholder="" value="Hialeah">
             </div>
             <div class="form-group">
               <label for="quarryStateSelect">State</label>
               <select id="quarryStateSelect" data-toggle="select" class="form-control">
-                <option selected="">-- Choose One --</option>
+                <option>-- Choose One --</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
                 <option value="AZ">Arizona</option>
@@ -46,7 +46,7 @@
                 <option value="CT">Connecticut</option>
                 <option value="DE">Delaware</option>
                 <option value="DC">District Of Columbia</option>
-                <option value="FL">Florida</option>
+                <option value="FL" selected="">Florida</option>
                 <option value="GA">Georgia</option>
                 <option value="HI">Hawaii</option>
                 <option value="ID">Idaho</option>
@@ -93,14 +93,15 @@
             <div class="form-group">
               <label for="quarryPhone">Phone Number:</label>
               <input type="input" class="form-control" id="quarryPhone" placeholder="(000) 000-0000)" data-mask="(000) 000-0000"
-                autocomplete="off" maxlength="14" data-com.agilebits.onepassword.user-edited="yes">
+                autocomplete="off" maxlength="14" data-com.agilebits.onepassword.user-edited="yes" value="(305) 822-5322">
             </div>
           </div>
           <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Update</button>
           </div>
         </form>
       </div>
     </div>
+
   </div>
 </div>

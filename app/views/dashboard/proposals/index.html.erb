@@ -1,0 +1,38 @@
+<%- title 'Proposals' %>
+
+<%= render 'dashboard/page_header' %>
+
+<div class="container-fluid page__container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card dashboard-area-tabs" id="dashboard-area-tabs">
+        <div class="card-header p-0 bg-white nav">
+          <div class="row no-gutters flex" role="tablist">
+            <div class="col" data-toggle="chart" data-target="#earningsTrafficChart" data-update='{"data":{"datasets":[{"label": "Traffic", "data":[10,2,5,15,10,12,15,25,22,30,25,40]}]}}'
+              data-prefix="" data-suffix="k">
+              <a href="#" data-toggle="tab" role="tab" aria-selected="true" class="dashboard-area-tabs__tab card-body text-center active">
+                <span class="card-header__title m-0">Sessions</span>
+                <span class="text-amount">18,391</span>
+              </a>
+            </div>
+            <div class="col border-left" data-toggle="chart" data-target="#earningsTrafficChart" data-update='{"data":{"datasets":[{"label": "Earnings", "data":[7,35,12,27,34,17,19,30,28,32,24,39]}]}}'
+              data-prefix="$" data-suffix="k">
+              <a href="#" data-toggle="tab" role="tab" aria-selected="false" class="dashboard-area-tabs__tab card-body text-center">
+                <span class="card-header__title m-0">Orders</span>
+                <span class="text-amount">&dollar;8,942</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body text-muted" style="height: 280px;">
+          <div class="chart" style="height: calc(280px - 1.25rem * 2);">
+            <canvas id="earningsTrafficChart">
+              <span style="font-size: 1rem;"><strong>Website Traffic / Earnings</strong> area chart goes here.</span>
+            </canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -16,10 +16,12 @@ Rails.application.routes.draw do
     resources :customers, controller: 'dashboard/customers'
     resources :materials, controller: 'dashboard/materials'
     resources :suppliers, controller: 'dashboard/suppliers'
+    resources :proposals, controller: 'dashboard/proposals' do
+      resources :quotes, except: [:index], controller: 'dashboard/proposals/quotes'
+    end
 
     resources :settings, only: [:index], controller: 'dashboard/settings'
     resources :users, only: [:index], controller: 'dashboard/users'
-    resources :sales, only: [:index], controller: 'dashboard/sales'
     resource :billing, only: [:index], controller: 'dashboard/billing' do
       get '', action: :index, as: ''
     end
