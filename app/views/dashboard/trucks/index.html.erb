@@ -21,6 +21,13 @@
               <option value="indie"<%= 'selected' if params[:truck_ownership] == 'indie' %>>Indie</option>
             </select>
 
+            <label class="sr-only" for="inlineFormRole">Active</label>
+            <select id="inlineFormRole" class="custom-select mb-2 mr-sm-2 mb-sm-0" name="truck_activity" onChange="$(this).parent().submit()">
+              <option value="all" <%= 'selected' if params[:truck_activity] != 'active' && params[:truck_activity] != 'inactive' %>>All </option>
+              <option value="active"<%= 'selected' if params[:truck_activity] == 'active'%>>Active</option>
+              <option value="inactive"<%= 'selected' if params[:truck_activity] == 'inactive' %>>Inactive</option>
+            </select>
+
           </form>
         </div>
         <%= render 'trucks.table' %>

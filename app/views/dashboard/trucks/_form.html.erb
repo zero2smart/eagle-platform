@@ -14,8 +14,11 @@
     <div class="form-group">
       <label for="truckStatus">Status</label><br>
       <div class="custom-control custom-checkbox-toggle custom-control-inline mr-1">
-        <!-- <input name="truck[is_active]" <%= "checked" if @truck.is_active? %> type="checkbox" id="truckStatus" class="custom-control-input" value="1"> -->
-        <%= f.input :is_active, label: false, wrapper: false, :input_html => { :class => 'test custom-control-input', id: "truckStatus" } %>
+        <!-- <input name="truck[is_active]" checked='<%#= @truck.is_active? ? "checked" : false %> 'type="checkbox" id="truckStatus" class="custom-control-input" value="1"> -->
+        <%= check_box('truck', 'is_active', options = {
+checked: @truck.is_active, class: 'custom-control-input', id: 'truckStatus'}, checked_value = '1', unchecked_value =
+'0') %>
+        <%#= f.input :is_active, label: false, wrapper: false, :input_html => { :class => 'custom-control-input', id: "truckStatus", value: "1" } %>
         <label class="custom-control-label" for="truckStatus">Active</label>
       </div>
       <label for="truckStatus" class="mb-0">Active</label>
