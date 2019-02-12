@@ -138,7 +138,7 @@ class EditJob extends Component {
                         </div>
                     </Row>
                     <Row className="map-container">
-                        <MapContainer />
+                        <MapContainer address={this.state.fields.deliveryAddress} />
                     </Row>
                 </ModalBody>
                 <div className={`${this.state.optionsOpen ? 'options-dropdown' : 'd-none'}`} ref={node => this.optionsRef = node}>

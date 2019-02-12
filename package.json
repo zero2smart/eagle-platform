@@ -15,8 +15,10 @@
     "react": "^16.7.0",
     "react-date-range": "^0.9.4",
     "react-dom": "^16.7.0",
+    "react-geocode": "^0.1.2",
     "react-on-rails": "11.2.2",
     "react-redux": "^6.0.0",
+    "react-router-dom": "^4.3.1",
     "react-router-redux": "^4.0.8",
     "react-sortable-hoc": "^1.5.2",
     "reactstrap": "^6.5.0",
@@ -33,7 +35,7 @@
   "engines": {
     "node": "11.9.0",
     "npm": "6.5.0",
-    "yarn": "1.13.0"
+    "yarn": "1.12.x"
   },
   "cacheDirectories": [
     "node_modules",

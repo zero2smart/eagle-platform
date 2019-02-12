@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+import Geocode from 'react-geocode';
 
 const mapStyles = {
     width: '100%',
     height: '375px',
 };
+
+Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAP_API_KEY);
+
+// Enable or disable logs. Its optional.
+Geocode.enableDebug();
 
 class MapContainer extends Component {
     constructor(props) {
@@ -13,7 +20,11 @@ class MapContainer extends Component {
         this.state = {
             showingInfoWindow: false,  //Hides or the shows the infoWindow
             activeMarker: {},          //Shows the active marker upon click
-            selectedPlace: {}          //Shows the infoWindow to the selected place upon a marker
+            selectedPlace: {},          //Shows the infoWindow to the selected place upon a marker
+            location: {
+                lat: -1.2884,
+                lng: 36.8233
+            }
         };
     }
 
@@ -32,6 +43,26 @@ class MapContainer extends Component {
             });
         }
     };
+
+    componentDidMount() {
+        Geocode.fromAddress(this.props.address).then(response => {
+            const {
+                lat,
+                lng
+            } = response.results[0].geometry.location;
+            console.log(lat, lng);
+            debugger;
+            this.setState({
+                location: {
+                    lat: lat,
+                    lng: lng
+                }
+            });
+        },
+        error => {
+            console.error(error);
+        });
+    }
 
     render() {
         const points = [{
@@ -63,10 +94,9 @@ class MapContainer extends Component {
                 zoom={14}
                 style={mapStyles}
                 initialCenter={{
-                    lat: 40.756795,
-                    lng: -73.954298
+                    lat: this.state.location.lat,
+                    lng: this.state.location.lng
                 }}
-                bounds={bounds}
             >
                 <Marker
                     onClick={this.onMarkerClick}
@@ -85,6 +115,10 @@ class MapContainer extends Component {
         );
     }
 }
+
+MapContainer.propTypes = {
+    address: PropTypes.string.isRequired
+};
 
 export default GoogleApiWrapper({
     apiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY

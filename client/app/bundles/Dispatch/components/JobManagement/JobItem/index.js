@@ -38,8 +38,13 @@ class JobItem extends Component {
     this.removeTruck = this.removeTruck.bind(this);
     this.openEditJobDialog = this.openEditJobDialog.bind(this);
     this.setJobToComplete = this.setJobToComplete.bind(this);
+    this.onClickAddress = this.onClickAddress.bind(this);
 
     this.truckElements = [];
+  }
+
+  onClickAddress() {
+      this.props.history.push('/');
   }
 
   setJobToComplete() {
@@ -107,7 +112,7 @@ class JobItem extends Component {
           <tr className={`${this.props.isSorting ? 'dragging' : ''} ${!this.state.showTruckList ? '' : 'o-100'} ${this.props.hasSearchKeyword ? 'o-100' : ''} ${this.props.className}`}>
             <th scope="active" className={`${this.props.job.dispatched_trucks.length > 0 && !this.state.showTruckList ? 'trucks-added' : ''}`} onClick={this.openEditJobDialog}>{this.props.job.job_id}</th>
             <td>{this.props.job.quarry_name}</td>
-            <td>{this.props.job.quarry_address}</td>
+            <td onClick={this.onClickAddress}>{this.props.job.quarry_address}</td>
             <td>{this.props.job.material}</td>
             <td>{this.props.job.customer_name}</td>
             <td>{this.props.job.job_site}</td>

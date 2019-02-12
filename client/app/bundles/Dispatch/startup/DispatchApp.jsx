@@ -1,5 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
 // This will be in components
 // import App from './App';
