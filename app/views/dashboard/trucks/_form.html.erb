@@ -8,13 +8,14 @@
 
     <div class="form-group">
       <label for="ownership">Ownership</label>
-      <%= f.input :is_owned, as: :select, collection: [['Demo Trucking', true], ['Private', false]], label: false, :input_html => { :class => 'form-control', id: "ownership" }, prompt: '--Select--', selected: (@truck.is_owned.to_s rescue nil) %>
+      <%= f.input :is_owned, as: :select, collection: [['Demo Trucking', true], ['Independent', false]], label: false, :input_html => { :class => 'form-control', id: "ownership" }, prompt: '--Select--', selected: (@truck.is_owned.to_s rescue nil) %>
     </div>
 
     <div class="form-group">
       <label for="truckStatus">Status</label><br>
       <div class="custom-control custom-checkbox-toggle custom-control-inline mr-1">
-        <input name="truck[is_active]" checked="" type="checkbox" id="truckStatus" class="custom-control-input">
+        <!-- <input name="truck[is_active]" <%= "checked" if @truck.is_active? %> type="checkbox" id="truckStatus" class="custom-control-input" value="1"> -->
+        <%= f.input :is_active, label: false, wrapper: false, :input_html => { :class => 'test custom-control-input', id: "truckStatus" } %>
         <label class="custom-control-label" for="truckStatus">Active</label>
       </div>
       <label for="truckStatus" class="mb-0">Active</label>

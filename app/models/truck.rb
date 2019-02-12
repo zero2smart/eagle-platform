@@ -26,8 +26,8 @@ class Truck < ApplicationRecord
   # ######################
   # SCOPES
   # ######################
-  scope :is_owned, -> { where(is_owned: true) }
-  scope :is_private, -> { where(is_owned: false) }
+  scope :is_private, -> { where(is_owned: true) }
+  scope :is_indie, -> { where(is_owned: false) }
   scope :is_active, -> { where(is_active: true) }
   scope :is_available, -> { where(is_active: true).where(is_available: true) }
   # ######################

@@ -4,8 +4,8 @@ class Dashboard::TrucksController < AuthenticatedController
   def index
     @trucks = current_vendor.trucks.is_active
     @trucks = @trucks.where(number: params[:truck_number]) if params[:truck_number] && params[:truck_number] != ''
-    @trucks = @trucks.is_owned if params[:truck_ownership]=="owned"
     @trucks = @trucks.is_private if params[:truck_ownership]=="private"
+    @trucks = @trucks.is_indie if params[:truck_ownership]=="indie"
 
     @trucks = @trucks.paginate(paginate_params)
   end
@@ -29,6 +29,7 @@ class Dashboard::TrucksController < AuthenticatedController
   end
 
   def update
+    raise params.inspect
     if @truck.update(truck_params)
       redirect_to dashboard_trucks_url, notice: 'Truck was successfully updated.'
     else

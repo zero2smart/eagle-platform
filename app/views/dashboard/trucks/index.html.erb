@@ -16,9 +16,9 @@
 
             <label class="sr-only" for="inlineFormRole">Role</label>
             <select id="inlineFormRole" class="custom-select mb-2 mr-sm-2 mb-sm-0" name="truck_ownership" onChange="$(this).parent().submit()">
-              <option value="all" <%= 'selected' if params[:truck_ownership] != 'owned' && params[:truck_ownership] != 'private' %>>All </option>
-              <option value="owned"<%= 'selected' if params[:truck_ownership] == 'owned'%>><%= current_vendor.short_name %></option>
-              <option value="private"<%= 'selected' if params[:truck_ownership] == 'private' %>>Private</option>
+              <option value="all" <%= 'selected' if params[:truck_ownership] != 'private' && params[:truck_ownership] != 'indie' %>>All </option>
+              <option value="private"<%= 'selected' if params[:truck_ownership] == 'private'%>><%= current_vendor.short_name %></option>
+              <option value="indie"<%= 'selected' if params[:truck_ownership] == 'indie' %>>Indie</option>
             </select>
 
           </form>

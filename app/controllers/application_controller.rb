@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def paginate_params
-    {page: params[:page], per_page: 10}
+    {page: params[:page], per_page: 20}
   end
 
 end
