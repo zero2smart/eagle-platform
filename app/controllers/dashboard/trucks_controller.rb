@@ -2,7 +2,7 @@ class Dashboard::TrucksController < AuthenticatedController
   before_action :set_truck, only: [:edit, :update, :destroy]
 
   def index
-    @trucks = current_vendor.trucks.is_available
+    @trucks = current_vendor.trucks.is_available.order(:number)
     @trucks = @trucks.where(number: params[:truck_number]) if params[:truck_number] && params[:truck_number] != ''
     @trucks = @trucks.is_private if params[:truck_ownership]=="private"
     @trucks = @trucks.is_indie if params[:truck_ownership]=="indie"

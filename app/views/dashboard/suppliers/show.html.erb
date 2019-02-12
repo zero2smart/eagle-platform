@@ -1,4 +1,4 @@
-<%- title 'White Rock Quarries' %>
+<%- title @supplier.name %>
 
 <%= render 'dashboard/page_header' %>
 
@@ -8,16 +8,16 @@
       <div class="card">
         <div class="card-header card-header-large bg-white d-flex align-items-center">
           <h4 class="card-header__title flex m-0">Information</h4>
-          <%= link_to '<i class="material-icons mr-1">edit</i>'.html_safe, edit_dashboard_supplier_path(1), class: "btn btn-primary p-0 pl-1" %>
+          <%= link_to '<i class="material-icons mr-1">edit</i>'.html_safe, edit_dashboard_supplier_path(@supplier), class: "btn btn-primary p-0 pl-1" %>
         </div>
         <div class="card-body">
           <div class="row">
             <div class="col-lg">
-            <h5>White Rock Quarries</h5>
+            <h5><%= @supplier.name %></h5>
             <ul class="list-unstyled">
-              <li><strong>Address:</strong> 18300 NW 122nd Ave, Hialeah, FL 33018</li>
-              <li><strong>Phone:</strong> (305) 822-5322</li>
-              <li><strong>Email:</strong> info@whiterockquarries.com</li>
+              <li><strong>Address:</strong> <%= @supplier.address %></li>
+              <li><strong>Phone:</strong> <%= f_phone @supplier.phone_number %></li>
+              <li><strong>Email:</strong> <%= @supplier.email %></li>
             </ul>
             
             </div>
