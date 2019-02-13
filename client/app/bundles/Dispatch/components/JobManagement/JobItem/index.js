@@ -45,7 +45,7 @@ class JobItem extends Component {
   }
 
   onClickAddress() {
-    window.location.href = "http://www.w3schools.com";
+    window.open("https://www.google.com/maps/place/" + this.props.job.quarry_address, '_blank');
   }
 
   setJobToComplete() {

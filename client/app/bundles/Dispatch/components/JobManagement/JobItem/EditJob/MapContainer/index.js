@@ -22,8 +22,8 @@ class MapContainer extends Component {
             activeMarker: {},          //Shows the active marker upon click
             selectedPlace: {},          //Shows the infoWindow to the selected place upon a marker
             location: {
-                lat: -1.2884,
-                lng: 36.8233
+                lat: this.props.lat,
+                lng: this.props.lng
             }
         };
     }
@@ -51,7 +51,7 @@ class MapContainer extends Component {
                 lng
             } = response.results[0].geometry.location;
             console.log(lat, lng);
-            debugger;
+
             this.setState({
                 location: {
                     lat: lat,
@@ -117,7 +117,9 @@ class MapContainer extends Component {
 }
 
 MapContainer.propTypes = {
-    address: PropTypes.string.isRequired
+    address: PropTypes.string.isRequired,
+    lng: PropTypes.number.isRequired,
+    lat: PropTypes.number.isRequired
 };
 
 export default GoogleApiWrapper({

@@ -219,6 +219,10 @@ tr {
       cursor: pointer;
     }
 
+    &:nth-child(3) {
+      cursor: pointer;
+    }
+
     &:nth-child(8) {
       width: 50px;
     }
