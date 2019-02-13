@@ -22,4 +22,20 @@ class ApplicationController < ActionController::Base
     {page: params[:page], per_page: 20}
   end
 
+  def editable_redirect_to(url, args)
+    if request.xhr?
+      render json: {status: 'ok', message: 'ok'}
+    else
+      redirect_to url, args
+    end
+  end
+
+  def editable_render(args)
+    if request.xhr?
+      render json: {status: 'error', message: flash[:error]}
+    else
+      redirect_to url, args
+    end
+  end
+
 end

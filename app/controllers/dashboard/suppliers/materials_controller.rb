@@ -22,10 +22,10 @@ class Dashboard::Suppliers::MaterialsController < AuthenticatedController
 
   def update
     if @material.update(material_params)
-      redirect_to dashboard_supplier_path(@supplier), notice: 'Material was successfully updated.'
+      editable_redirect_to dashboard_supplier_path(@supplier), notice: 'Material was successfully updated.'
     else
       flash[:error] = @material.errors.full_messages.join(", ")
-      render :edit
+      editable_render :edit
     end
   end
 
@@ -45,7 +45,11 @@ class Dashboard::Suppliers::MaterialsController < AuthenticatedController
     end
 
     def material_params
-      params.require(:material).permit(:material_type_id, :cost_ton, :cost_load, :cost_yard, :is_active)
+      if request.xhr?
+        {params[:name] => params[:value]}
+      else
+        params.require(:material).permit(:material_type_id, :cost_ton, :cost_load, :cost_yard, :is_active)
+      end
     end
 
 end
