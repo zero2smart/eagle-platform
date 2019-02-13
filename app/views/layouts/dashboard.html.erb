@@ -3,7 +3,7 @@
   <head>
     <%= render 'layouts/head' %>
     <%= content_for :header_scripts %>
-    <%= stylesheet_link_tag 'dashboard', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'dashboard', media: 'all' %>
   </head>
 
   <body class="<%= @body_class || 'layout-default' %> <%= controller_name %> <%= action_name %>">
@@ -38,7 +38,7 @@
 
     <%= content_for :footer %>
 
-    <%= javascript_include_tag 'dashboard', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'dashboard' %>
 
     <%= content_for :footer_scripts %>
   </body>

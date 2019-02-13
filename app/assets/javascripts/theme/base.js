@@ -32,8 +32,8 @@
 //= require dragula.min.js
 //= require fullcalendar.min.js
 //= require quill.min.js
-//=require daterangepicker.js
-
+//= require daterangepicker.js
+//= require bootstrap-editable.min.js
 
 //** APP SETTINGS
 //= require ./application.js
