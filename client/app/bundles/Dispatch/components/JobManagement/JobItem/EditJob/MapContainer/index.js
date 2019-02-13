@@ -100,7 +100,7 @@ class MapContainer extends Component {
             >
                 <Marker
                     onClick={this.onMarkerClick}
-                    name={'Current location'}
+                    name={this.props.address}
                 />
                 <InfoWindow
                     marker={this.state.activeMarker}
