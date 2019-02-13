@@ -29,7 +29,6 @@ const DispatchApp = (props) => (
     <BrowserRouter basename={'/dispatch'}>
       <Switch>
         <Route path='/' exact component={DispatchContainer} />
-        <Route path='/ss' component={DispatchContainer} />
       </Switch>
     </BrowserRouter>
   </Provider>
